@@ -24,7 +24,6 @@ class TividySystem {
         void registerDefinition(WorkflowDefinition*);
         string startWorkflow(string, WorkflowData);
         void assignTask(string, Participant*);
-        void completeTask(string, Participant*);
         void undoLast();
         string getProgress(string);
 };

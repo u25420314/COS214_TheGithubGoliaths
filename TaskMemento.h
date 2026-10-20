@@ -15,6 +15,8 @@ class TaskMemento {
         string assigneeid;
         WorkflowData payload;
         string timestamp;
+    public:
+        TaskMemento(string, string, WorkflowData, timestamp);
 };
 
 #endif TASKMEMENTO_H
