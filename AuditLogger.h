@@ -1,14 +1,14 @@
 #pragma once
-
-#include "WorkflowObserver.h" //damn now you dont work either
-#include "WorkflowEvent.h"
+#include <string>
 #include <vector>
+#include "WorkflowObserver.h"
 
-using namespace std;
+/** Observer that keeps a timestamped text history of every event (read by the TUI). */
+class AuditLogger : public WorkflowObserver {
+public:
+    void update(const WorkflowEvent& e) override;
+    const std::vector<std::string>& getEntries() const { return entries_; }
 
-class AuditLogger: public WorkflowObserver{
-    private:
-        vector<string> entries;
-    public:
-        void update(WorkflowEvent e);
+private:
+    std::vector<std::string> entries_;
 };
