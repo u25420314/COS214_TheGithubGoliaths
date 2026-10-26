@@ -5,7 +5,7 @@
 
 class LeastLoadedAssignment : public AssignmentStrategy{
     public:
-        virtual Participant* selectParticipant(consts std::vector<Participant*>& participants, const std::string& requiredRole);
+        virtual Participant* choose(const Task& task, const std::vector<Participant*>& pool);
 };
 
 #endif

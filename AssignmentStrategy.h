@@ -5,10 +5,12 @@
 #include <string>
 #include "Participant.h"
 
+class Task;
+
 
 class AssignmentStrategy{
     public:
-        virtual Participant* selectParticipant(const std::vector<Participant*>& participants, const std::string& requiredRole) = 0;
+        virtual Participant* choose(const Task& task, const std::vector<Participant*>& pool) = 0;
         virtual ~AssignmentStrategy(){}
             
         

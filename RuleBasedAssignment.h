@@ -5,10 +5,12 @@
 
 class RuleBasedAssignment : public AssignmentStrategy{
     private:
-        int preferredParticipantId;
+        std::string field;
+        std::string threshold;
 
     public:
-        virtual Participant* selectParticipant(consts std::vector<Participant*>& participants, const std::string& requiredRole);
+        RuleBasedAssignment(const std::string& field, const std::string& threshold);
+        virtual Participant* choose(const Task& task, const std::vector<Participant*>& pool);
 };
 
 #endif

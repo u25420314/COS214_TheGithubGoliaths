@@ -2,20 +2,23 @@
 #define PARTICIPANT_H
 
 #include <string>
+#include <vector>
 
 class Participant{
     private:
-        int id;
+        std::string id;
         std::string name;
-        std::string role;
-        int workload
+        std::vector<std::string> roles;
+        int workload;
 
     public:
-        Participant(int id, const std::string& name, const std::string& role);
-            int getId() const;
+        Participant(const std::string& id, const std::string& name, const std::vector<std::string>& roles);
+            std::string getId() const;
             std::string getName() const;
-            std::string getRole() const;
+            std::vector<std::string> getRoles() const;
             int getWorkload() const;
+
+            bool hasRole(const std::string& role) const;
 
             void incrementWorkload();
             void decrementWorkload();
