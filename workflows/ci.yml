@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, dev]
+  push:
+    branches: [ main, dev]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses:  actions/checkout@v4
+      - name:  Configure
+        run: cmake -S . -B build -DCMAKE_CXX_STANDARD=11
+      - name: build
+        run:  cmake --build build
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
+
+
