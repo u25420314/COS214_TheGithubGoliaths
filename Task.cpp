@@ -1,0 +1,159 @@
+#include "Task.h"
+#include "TaskState.h"
+#include "AvailableState.h"
+#include "TaskMemento.h"
+#include "DepthFirstIterator.h"
+
+//Constructor stores role, creates AvailableState as starting state and sets everything else to null
+Task::Task(const std::string& id, const std::string& name, const std::string& requiredRole) : WorkNode(id, name) {
+    this->requiredRole = requiredRole;
+    this->state = new AvailableState();
+    this->assignee = nullptr;
+    this->strategy = nullptr;
+    this->approvalChain = nullptr;
+    this->onRejectId = "";
+}
+
+//Destructor
+Task::~Task() {
+    delete state;
+}
+
+//swaps the new state and deletes the old one
+void Task::setState(TaskState* s) {
+    if (s == state) {
+        return;
+    }
+    TaskState* old = state;
+    state = s;
+    delete old;
+}
+
+//returns state
+TaskState* Task::getState() const {
+    return state;
+}
+
+
+//stores who is doing the task
+void Task::assign(Participant* p) {
+    assignee = p;
+}
+
+//forward to the current state, the state decides what happens
+void Task::start() {
+    if (state != nullptr) {
+        state->start(this);
+    }
+}
+
+//forward to the current state, the state decides what happens
+void Task::complete() {
+    if (state != nullptr) {
+        state->complete(this);
+    }
+}
+
+//forward to the current state, the state decides what happens
+void Task::reject() {
+    if (state != nullptr) {
+        state->reject(this);
+    }
+}
+
+//forward to the current state, the state decides what happens
+void Task::escalate() {
+    if (state != nullptr) {
+        state->escalate(this);
+    }
+}
+
+
+//Saves a copy of the state and assignee
+TaskMemento* Task::createMemento() const {
+    TaskState* stateCopy = (state != nullptr) ? state->clone() : nullptr;
+    return new TaskMemento(stateCopy, assignee);
+}
+
+//puts the saved state and the saved assignee back
+void Task::restore(const TaskMemento* m) {
+    if (m == nullptr) {
+        return;
+    }
+    if (m->getState() != nullptr) {
+        setState(m->getState()->clone());
+    }
+    assignee = m->getAssignee();
+}
+
+const std::string& Task::getRequiredRole() const {
+    return requiredRole;
+}
+
+Participant* Task::getAssignee() const {
+    return assignee;
+}
+
+//Strategy pattern
+void Task::setStrategy(AssignmentStrategy* s) {
+    strategy = s;
+}
+
+//Strategy pattern
+AssignmentStrategy* Task::getStrategy() const {
+    return strategy;
+}
+
+//Chain of Responsibility
+void Task::setApprovalChain(ApprovalHandler* h) {
+    approvalChain = h;
+}
+
+//Chain of Responsibility
+ApprovalHandler* Task::getApprovalChain() const {
+    return approvalChain;
+}
+
+//saves the other tasks id
+void Task::setOnReject(WorkNode* target) {
+    onRejectId = (target != nullptr) ? target->getId() : std::string();
+}
+//saves id directly
+void Task::setOnRejectId(const std::string& targetId) {
+    onRejectId = targetId;
+}
+
+//returns the id
+const std::string& Task::getOnRejectId() const {
+    return onRejectId;
+}
+
+//Prototype step, makes a new task with the same id, name and roles, copies the shared pointers and onRejectId, and copies the mediator, the new task has a fresh state and no assignee
+WorkNode* Task::clone() const {
+    Task* copy = new Task(id, name, requiredRole);
+    copy->strategy = strategy;
+    copy->approvalChain = approvalChain;
+    copy->onRejectId = onRejectId;
+    copy->mediator = mediator;
+    return copy;
+}
+
+//returns a depthFirstIterator on itself which visits just this one node
+WorkNodeIterator* Task::createIterator() {
+    return new DepthFirstIterator(this);
+}
+
+//asks the state if its complete
+bool Task::isComplete() const {
+    return state != nullptr && state->isComplete();
+}
+
+//is true if there is an assignee and a state
+bool Task::canStart() const {
+    return WorkNode::canStart() && assignee != nullptr && state != nullptr;
+}
+
+//call start so the state machine does the work
+void Task::doWork() {
+    start();
+}
