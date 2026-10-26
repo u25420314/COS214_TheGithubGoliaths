@@ -21,11 +21,15 @@ class TividySystem {
         vector<WorkflowDefinition*> definitions;
 
     public:
+        TividySystem();
+
         void registerDefinition(WorkflowDefinition*);
         string startWorkflow(string, WorkflowData);
         void assignTask(string, Participant*);
         void undoLast();
         string getProgress(string);
+
+        ~TividySystem();
 };
 
-#endif TIVIDYSYSTEM_H
+#endif

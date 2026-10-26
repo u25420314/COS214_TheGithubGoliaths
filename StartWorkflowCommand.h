@@ -12,6 +12,8 @@
 
 using namespace std;
 
+class WorkflowDefinition
+
 class StartWorkflowCommand : public Command {
     private:
         WorkflowDefinition* definition;
@@ -19,8 +21,12 @@ class StartWorkflowCommand : public Command {
         string createdId
 
     public:
+        StartWorkflowCommand(WorkflowEngine*, WorkflowDefinition*, WorkflowData)
+
         void execute();
         void undo();
+
+        string getCreatedId() const;
 };
 
 #endif STARTWORKFLOWCOMMAND_H

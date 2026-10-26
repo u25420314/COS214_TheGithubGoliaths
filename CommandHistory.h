@@ -16,8 +16,12 @@ class CommandHistory {
         stack<Command*> done;
 
     public:
-        void executeCommand(Command*);
+        CommandHistory();
+
+        void executeCommand(Command);
         void undo();
+
+        ~CommandHistory();
 };
 
 #endif COMMANDHISTORY_H

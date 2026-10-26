@@ -21,8 +21,12 @@ class AssignTaskCommand : public Command {
         TaskMemento* backup;
 
     public:
+        AssignTaskCommand(WorkflowEngine*, Task*, Participant*);
+
         void execute();
         void undo();
+
+        ~AssignTaskCommand();
 };
 
 #endif ASSIGNTASKCOMMAND_H
