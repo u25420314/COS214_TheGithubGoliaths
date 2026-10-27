@@ -3,7 +3,7 @@
 #ifndef STARTWORKFLOWCOMMAND_H
 #define STARTWORKFLOWCOMMAND_H
 
-#include "WorkFlowDefinition.h"
+#include "WorkflowDefinition.h"
 #include "WorkflowData.h"
 #include "Command.h"
 

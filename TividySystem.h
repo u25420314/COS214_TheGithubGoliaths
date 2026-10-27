@@ -4,11 +4,13 @@
 #ifndef TIVIDYSYSTEM_H
 #define TIVIDYSYSTEM_H
 
-#include "WorkFlowEngine.h"
+#include "WorkflowEngine.h"
 #include "CommandHistory.h"
 #include "WorkflowDefinition.h"
 #include "WorkflowData.h"
 #include "Participant.h"
+#include "StartWorkflowCommand.h"
+#include "AssignTaskCommand.h"
 
 #include <vector>
 #include <string>
