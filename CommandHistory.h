@@ -6,7 +6,7 @@
 
 #include "Command.h"
 
-#include <stack>
+#include <vector>
 #include <string>
 
 using namespace std;
@@ -16,7 +16,7 @@ using namespace std;
  */
 class CommandHistory {
     private:
-        stack<Command*> done; ///< Command history of executed commands
+        vector<Command*> done; ///< Command history of executed commands
 
     public:
         /// @brief creates empty history vector
@@ -24,7 +24,7 @@ class CommandHistory {
 
         /// @brief Executes a command and stores it incase it is to be undone
         /// @param Command to be executed
-        void executeCommand(Command);
+        void executeCommand(Command*);
 
         /// @brief Undoes the most recently executed command
         void undo();
