@@ -24,7 +24,7 @@ public:
     ~WorkflowEngine() override;
 
     /** Instantiate a definition, wire every node to this engine, activate the first tasks. */
-    WorkflowInstance& createInstance(const WorkflowDefinition& def, const WorkflowData& data);
+    WorkflowInstance* createInstance(const WorkflowDefinition& def, const WorkflowData& data);
 
     /** Mediator entry point. Events: "completed", "rejected", "escalated", "undone", ... */
     void notify(WorkNode* sender, const std::string& event) override;

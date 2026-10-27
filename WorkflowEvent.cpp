@@ -9,14 +9,16 @@ WorkflowEvent::WorkflowEvent(std::string type, std::string instanceId, std::stri
       nodeId_(std::move(nodeId)), time_(std::move(time)) {}
 
 std::string WorkflowEvent::currentTimestamp() {
-    std::time_t now = std::time(nullptr);
-    std::tm local{};
-#ifdef _WIN32
-    localtime_s(&local, &now);
-#else
-    localtime_r(&now, &local);
-#endif
-    std::ostringstream out;
-    out << std::put_time(&local, "%Y-%m-%d %H:%M:%S");
-    return out.str();
+//     std::time_t now = std::time(nullptr);
+//     std::tm local{};
+// #ifdef _WIN32
+//     localtime_s(&local, &now);
+// #else
+//     localtime_r(&now, &local);
+// #endif
+//     std::ostringstream out;
+//     out << std::put_time(&local, "%Y-%m-%d %H:%M:%S");
+//     return out.str();
+
+    return "";
 }
