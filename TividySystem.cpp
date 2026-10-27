@@ -45,7 +45,7 @@ void TividySystem::assignTask(string taskId, Participant* p) {
         return;
     }
 
-    Task* task = engine.findTask(taskId)
+    Task* task = engine.findTask(taskId);
 
     if(task == nullptr) {
         cout << "Task not found\n";
