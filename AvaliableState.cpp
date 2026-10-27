@@ -4,7 +4,7 @@
 #include "Task.h"
 #include "Participant.h"
 
-std::string AvaliableSate::getName() const {
+std::string AvaliableState::getName() const {
     return "Avaliable";
 }
 

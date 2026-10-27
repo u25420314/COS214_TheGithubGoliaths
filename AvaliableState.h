@@ -4,7 +4,7 @@
 #include "TaskState.h"
 
 
-class AvaliableSate : public TaskState {
+class AvaliableState : public TaskState {
     public:
         void assign(Task* t, Participant* p) override;
         void cancel(Task* t) override;
