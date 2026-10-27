@@ -17,7 +17,7 @@ void TividySystem::registerDefinition(WorkflowDefinition* d) {
     definitions.push_back(d);
 }
 
-// Searches for definition and atarts it with the data
+// Searches for definition and starts it with the data
 string TividySystem::startWorkflow(string defName, WorkflowData data) {
     WorkflowDefinition* chosenDef = nullptr;
     

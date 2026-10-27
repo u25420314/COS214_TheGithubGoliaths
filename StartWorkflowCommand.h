@@ -14,19 +14,31 @@ using namespace std;
 
 class WorkflowDefinition
 
+/**
+ * @brief The command class that starts a new instance of a workflow definition
+ */
 class StartWorkflowCommand : public Command {
     private:
-        WorkflowDefinition* definition;
-        WorkflowData data;
-        string createdId
+        WorkflowDefinition* definition; ///< The definition that is used for the instance
+        WorkflowData data; ///< The data to be used in the instance
+        string createdId; ///< The id of the instance
 
     public:
-        StartWorkflowCommand(WorkflowEngine*, WorkflowDefinition*, WorkflowData)
+        /// @brief This creates the StartWorkFlowCommand
+        /// @param e The engine that stores the instance
+        /// @param d The definition that is being used
+        /// @param data The data to be used in the instance
+        StartWorkflowCommand(WorkflowEngine* e, WorkflowDefinition* d, WorkflowData data);
 
+        /// @brief Starts the instance
         void execute();
+
+        /// @brief undoes the action performed by execute
         void undo();
 
+        /// @brief gets the created ID
+        /// @return createdId
         string getCreatedId() const;
 };
 
-#endif STARTWORKFLOWCOMMAND_H
+#endif
