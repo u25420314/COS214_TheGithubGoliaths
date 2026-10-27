@@ -28,7 +28,7 @@ class CompleteTaskCommand : public Command {
         /// @param e The engine to be used
         /// @param t The task that is being completed
         /// @param p The participant who holds the task
-        AssignTaskCommand(WorkflowEngine* e, Task* t, Participant* p);
+        CompleteTaskCommand(WorkflowEngine* e, Task* t, Participant* p);
 
         /// @brief Saves a memento and completes the task
         void execute() override;
@@ -37,7 +37,7 @@ class CompleteTaskCommand : public Command {
         void undo() override;
 
         /// @brief deletes backup memento
-        ~AssignTaskCommand();
+        ~CompleteTaskCommand();
 };
 
 #endif
