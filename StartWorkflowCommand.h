@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class WorkflowDefinition
+class WorkflowDefinition;
 
 /**
  * @brief The command class that starts a new instance of a workflow definition
