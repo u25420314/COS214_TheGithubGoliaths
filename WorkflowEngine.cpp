@@ -1,5 +1,7 @@
 #include "WorkflowEngine.h"
+#include <algorithm>
 #include "AssignmentStrategy.h"
+#include "AvailableState.h"
 #include "Task.h"
 #include "TaskState.h"
 #include "WorkNode.h"
@@ -9,22 +11,18 @@
 #include "WorkflowInstance.h"
 
 namespace {
-// Every node in the instance's tree (collected first so we never mutate while iterating).
-std::vector<WorkNode*> collectNodes(WorkflowInstance& instance) {
+// All nodes in an instance's tree, collected up front so we never change things mid-walk.
+std::vector<WorkNode*> allNodes(WorkNode* root) {
     std::vector<WorkNode*> nodes;
-    WorkNode* root = instance.getRoot();
     if (!root) return nodes;
     auto it = root->createIterator();
     for (it->first(); !it->isDone(); it->next()) nodes.push_back(it->current());
     return nodes;
 }
-
-// Isolated here so there is ONE place to change if Task's state API differs.
-std::string stateName(Task* t) { return t->getState()->getName(); }
 }  // namespace
 
 WorkflowEngine::WorkflowEngine(std::vector<Participant> participants)
-    : participants_(std::move(participants)) {}
+    : participants(std::move(participants)) {}
 
 WorkflowEngine::~WorkflowEngine() = default;
 
@@ -45,16 +43,16 @@ WorkflowInstance* WorkflowEngine::createInstance(const WorkflowDefinition& def,
 
 void WorkflowEngine::notify(WorkNode* sender, const std::string& event) {
     WorkflowInstance* inst = findInstanceOf(sender);
-    if (!inst) return;  // node doesn't belong to any instance we manage
+    if (!inst) return;
 
-    publish("task_" + event, *inst, sender);
+    publish(event, *inst, sender);           // tell the observers first
 
-    if (event == "completed" || event == "approved" || event == "rejected") {
-        activateNext(*inst);   // something finished, or rejected work was re-routed
-        checkFinished(*inst);
+    if (event == "completed" || event == "rejected") {
+        activateNext(*inst);                 // something finished, or rejected work was re-routed
+        if (event == "completed" && inst->isComplete())
+            publish("instance_completed", *inst, nullptr);
     } else if (event == "undone") {
         unlockDownstream(*inst);
-        finished_.erase(inst->getId());
     }
 }
 
@@ -83,12 +81,22 @@ void WorkflowEngine::assign(Task* task) {
     return;
 }
 
-// ---- private helpers ------------------------------------------------------
+void WorkflowEngine::detach(WorkflowObserver* o) {
+    observers.erase(std::remove(observers.begin(), observers.end(), o), observers.end());
+}
+
+void WorkflowEngine::notifyObservers(const WorkflowEvent& e) {
+    std::vector<WorkflowObserver*> snapshot = observers;   // observers may detach while we loop
+    for (WorkflowObserver* o : snapshot)
+        if (std::find(observers.begin(), observers.end(), o) != observers.end()) o->update(e);
+}
+
+// ---- helpers --------------------------------------------------------------
 
 WorkflowInstance* WorkflowEngine::findInstanceOf(WorkNode* node) {
     if (!node) return nullptr;
-    for (auto& inst : instances_)
-        for (WorkNode* n : collectNodes(*inst))
+    for (auto& inst : instances)
+        for (WorkNode* n : allNodes(inst->root.get()))
             if (n == node) return inst.get();
     return nullptr;
 }
@@ -107,12 +115,6 @@ void WorkflowEngine::unlockDownstream(WorkflowInstance& instance) {
     return;
 }
 
-void WorkflowEngine::checkFinished(WorkflowInstance& instance) {
-    if (instance.isComplete() && finished_.insert(instance.getId()).second)
-        publish("workflow_completed", instance, nullptr);
-}
-
-void WorkflowEngine::publish(const std::string& type, const WorkflowInstance& instance,
-                             const WorkNode* node) {
-    notifyObservers(WorkflowEvent(type, instance.getId(), node ? node->getId() : ""));
+void WorkflowEngine::publish(const std::string& type, WorkflowInstance& i, WorkNode* node) {
+    notifyObservers(WorkflowEvent(type, i.id, node ? node->id : ""));
 }

@@ -1,19 +1,13 @@
 #pragma once
-#include <string>
-#include <vector>
+#include <iostream>
 #include "WorkflowObserver.h"
-#include "EmailAdapter.h"
 
-/** Observer that turns important events into messages (sent through a MessageSender if given). */
+/** Observer: prints a notification for the events a user would care about. */
 class NotificationService : public WorkflowObserver {
 public:
-    explicit NotificationService(MessageSender* sender = nullptr,
-                                 std::string recipient = "team@tividy.local");
+    explicit NotificationService(std::ostream& out = std::cout) : out(out) {}
     void update(const WorkflowEvent& e) override;
-    const std::vector<std::string>& getMessages() const { return messages_; }
 
 private:
-    MessageSender* sender_;
-    std::string recipient_;
-    std::vector<std::string> messages_;
+    std::ostream& out;
 };
