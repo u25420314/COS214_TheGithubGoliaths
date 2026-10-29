@@ -1,7 +1,7 @@
 #pragma once
 #include "WorkflowEvent.h"
 
-/** Observer interface: anything that wants to hear about workflow events. */
+/** <<Interface>> Anything that wants to hear about workflow events. */
 class WorkflowObserver {
 public:
     virtual ~WorkflowObserver() = default;

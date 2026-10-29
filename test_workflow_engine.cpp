@@ -1,10 +1,8 @@
-// Depends on Person 3/4's classes, so it only compiles once they are merged.
+// Needs Person 3/4/5's classes, so it only builds once their code is merged.
 #include "doctest.h"
 #include "Participant.h"
-#include "ProgressMonitor.h"
 #include "StandardWorkflowBuilder.h"
 #include "Task.h"
-#include "TaskState.h"
 #include "WorkNode.h"
 #include "WorkNodeIterator.h"
 #include "WorkflowData.h"
@@ -12,38 +10,41 @@
 #include "WorkflowInstance.h"
 
 namespace {
-Task* findTask(WorkflowInstance& inst, const std::string& name) {
-    auto it = inst.getRoot()->createIterator();
+struct Recorder : WorkflowObserver {
+    std::vector<std::string> types;
+    void update(const WorkflowEvent& e) override { types.push_back(e.getType()); }
+    int count(const std::string& t) const { return (int)std::count(types.begin(), types.end(), t); }
+};
+// The n-th Task in the instance's tree (0 = first).
+Task* nthTask(WorkflowInstance* inst, int n) {
+    auto it = inst->getRoot()->createIterator();
     for (it->first(); !it->isDone(); it->next())
-        if (it->current()->getName() == name) return dynamic_cast<Task*>(it->current());
+        if (Task* t = dynamic_cast<Task*>(it->current())) if (n-- == 0) return t;
     return nullptr;
 }
-std::string stateOf(Task* t) { return t->getState()->getName(); }
 }  // namespace
 
 TEST_CASE("The next task activates only when its dependencies are complete") {
     StandardWorkflowBuilder b;
     b.reset();
-    b.beginStage("main", false);          // sequential: A then B
+    b.beginStage("main", false);     // sequential: A then B
     b.addTask("A", "clerk");
     b.addTask("B", "clerk");
     b.endStage();
     WorkflowDefinition def = b.getResult();
 
     WorkflowEngine engine({Participant("p1", "Alice", {"clerk"})});
-    ProgressMonitor monitor(2);
-    engine.attach(&monitor);
+    Recorder rec; engine.attach(&rec);
 
-    WorkflowInstance& inst = engine.createInstance(def, WorkflowData());
-    Task* a = findTask(inst, "A");
-    Task* bTask = findTask(inst, "B");
+    WorkflowInstance* inst = engine.createInstance(def, WorkflowData());
+    Task* a = nthTask(inst, 0); Task* bTask = nthTask(inst, 1);
     REQUIRE(a); REQUIRE(bTask);
+    CHECK(rec.count("task_assigned") == 1);   // only A so far
 
-    CHECK(stateOf(a) == "Assigned");
-    CHECK(stateOf(bTask) == "Available");   // blocked by A
+    a->start(); a->complete();                // Task reports "completed" to the engine
+    CHECK(rec.count("task_assigned") == 2);   // now B
+    CHECK(rec.count("instance_completed") == 0);
 
-    a->start();
-    a->complete();                          // Task tells the engine via notify()
-    CHECK(stateOf(bTask) == "Assigned");
-    CHECK(monitor.getCompleted() == 1);
+    bTask->start(); bTask->complete();
+    CHECK(rec.count("instance_completed") == 1);
 }

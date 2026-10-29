@@ -3,12 +3,12 @@
 #include <vector>
 #include "WorkflowObserver.h"
 
-/** Observer that keeps a timestamped text history of every event (read by the TUI). */
+/** Observer: stores a timestamped line for every event. The TUI reads it as the history. */
 class AuditLogger : public WorkflowObserver {
 public:
     void update(const WorkflowEvent& e) override;
-    const std::vector<std::string>& getEntries() const { return entries_; }
+    const std::vector<std::string>& getEntries() const { return entries; }
 
 private:
-    std::vector<std::string> entries_;
+    std::vector<std::string> entries;
 };

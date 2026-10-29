@@ -1,12 +1,10 @@
-// Needs doctest.h on the include path and ONE file somewhere with
-// #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN (Person 5's test setup should have it).
+// Observer-side tests. They use the engine only as the Subject, so no workflow is needed.
 #include "doctest.h"
+#include <sstream>
 #include "AuditLogger.h"
-#include "EmailAdapter.h"
 #include "NotificationService.h"
-#include "PaymentAdapter.h"
 #include "ProgressMonitor.h"
-#include "WorkflowSubject.h"
+#include "WorkflowEngine.h"
 
 namespace {
 struct Recorder : WorkflowObserver {
@@ -14,86 +12,68 @@ struct Recorder : WorkflowObserver {
     void update(const WorkflowEvent& e) override { types.push_back(e.getType()); }
 };
 struct SelfDetacher : WorkflowObserver {
-    WorkflowSubject& subject; int calls = 0;
-    explicit SelfDetacher(WorkflowSubject& s) : subject(s) {}
-    void update(const WorkflowEvent&) override { ++calls; subject.detach(this); }
+    WorkflowEngine& engine; int calls = 0;
+    explicit SelfDetacher(WorkflowEngine& e) : engine(e) {}
+    void update(const WorkflowEvent&) override { ++calls; engine.detach(this); }
 };
-struct Detaches : WorkflowObserver {   // removes another observer when called
-    WorkflowSubject& subject; WorkflowObserver* victim;
-    Detaches(WorkflowSubject& s, WorkflowObserver* v) : subject(s), victim(v) {}
-    void update(const WorkflowEvent&) override { subject.detach(victim); }
+struct Detacher : WorkflowObserver {   // removes another observer when called
+    WorkflowEngine& engine; WorkflowObserver* victim;
+    Detacher(WorkflowEngine& e, WorkflowObserver* v) : engine(e), victim(v) {}
+    void update(const WorkflowEvent&) override { engine.detach(victim); }
 };
 WorkflowEvent ev(const char* type) { return WorkflowEvent(type, "inst1", "taskA"); }
 }  // namespace
 
 TEST_CASE("Observers receive events") {
-    WorkflowSubject s; Recorder a, b;
-    s.attach(&a); s.attach(&b); s.attach(&a);  // duplicate ignored
-    CHECK(s.observerCount() == 2);
-    s.notifyObservers(ev("task_completed"));
-    CHECK(a.types == std::vector<std::string>{"task_completed"});
+    WorkflowEngine engine; Recorder a, b;
+    engine.attach(&a); engine.attach(&b); engine.attach(&a);   // duplicate ignored
+    engine.notifyObservers(ev("completed"));
+    CHECK(a.types == std::vector<std::string>{"completed"});
     CHECK(b.types.size() == 1);
-    s.detach(&b);
-    s.notifyObservers(ev("task_assigned"));
+
+    engine.detach(&b);
+    engine.notifyObservers(ev("task_assigned"));
     CHECK(a.types.size() == 2);
-    CHECK(b.types.size() == 1);
+    CHECK(b.types.size() == 1);   // detached, hears nothing more
 }
 
 TEST_CASE("Detaching during notification is safe") {
-    WorkflowSubject s; Recorder r;
-    SelfDetacher self(s);
-    s.attach(&self); s.attach(&r);
-    s.notifyObservers(ev("x")); s.notifyObservers(ev("x"));
+    WorkflowEngine engine; Recorder r; SelfDetacher self(engine);
+    engine.attach(&self); engine.attach(&r);
+    engine.notifyObservers(ev("x")); engine.notifyObservers(ev("x"));
     CHECK(self.calls == 1);
     CHECK(r.types.size() == 2);
 
-    WorkflowSubject s2; Recorder victim;
-    Detaches killer(s2, &victim);
-    s2.attach(&killer); s2.attach(&victim);
-    s2.notifyObservers(ev("x"));
+    WorkflowEngine engine2; Recorder victim; Detacher killer(engine2, &victim);
+    engine2.attach(&killer); engine2.attach(&victim);
+    engine2.notifyObservers(ev("x"));
     CHECK(victim.types.empty());   // removed before its turn
 }
 
 TEST_CASE("AuditLogger stores history") {
     AuditLogger log;
-    log.update(ev("task_assigned"));
-    log.update(ev("task_completed"));
+    log.update(ev("task_assigned")); log.update(ev("completed"));
     REQUIRE(log.getEntries().size() == 2);
     CHECK(log.getEntries()[0].find("task_assigned") != std::string::npos);
-    CHECK(log.getEntries()[1].find("node=taskA") != std::string::npos);
+    CHECK(log.getEntries()[1].find("node taskA") != std::string::npos);
 }
 
-TEST_CASE("ProgressMonitor counts completions and undos") {
-    ProgressMonitor m(4);
-    m.update(ev("task_completed")); m.update(ev("task_completed"));
-    CHECK(m.percentage() == 50);
-    m.update(ev("task_undone"));
-    CHECK(m.getCompleted() == 1);
-    m.update(ev("task_undone")); m.update(ev("task_undone"));
-    CHECK(m.getCompleted() == 0);   // never negative
-    CHECK(m.report() == "Progress: 0/4 tasks complete (0%)");
+TEST_CASE("ProgressMonitor counts completed and undone") {
+    ProgressMonitor m;
+    m.update(ev("completed")); m.update(ev("completed"));
+    CHECK(m.report() == "2 task(s) completed");
+    m.update(ev("undone"));
+    CHECK(m.getCompletedCount() == 1);
+    m.update(ev("undone")); m.update(ev("undone"));
+    CHECK(m.getCompletedCount() == 0);   // never negative
 }
 
-TEST_CASE("Adapters work with the stubs") {
-    EmailServiceStub mail; EmailAdapter email(mail);
-    CHECK(email.send("a@b.c", "Hi", "Body"));
-    CHECK(mail.sentCount == 1);
-    CHECK(mail.lastText == "Hi\n\nBody");
-    CHECK_FALSE(email.send("", "Hi", "Body"));
-
-    PaymentServiceStub bank; PaymentAdapter pay(bank);
-    CHECK(pay.pay("ACC-1", 12.34));
-    CHECK(bank.lastCents == 1234);
-    CHECK(pay.lastTransactionId() > 0);
-    CHECK_FALSE(pay.pay("ACC-1", 0));
-}
-
-TEST_CASE("NotificationService sends only important events") {
-    EmailServiceStub mail; EmailAdapter email(mail);
-    NotificationService n(&email);
-    n.update(ev("workflow_started"));      // ignored
+TEST_CASE("NotificationService only reports important events") {
+    std::ostringstream out; NotificationService n(out);
+    n.update(ev("instance_created"));   // ignored
+    CHECK(out.str().empty());
     n.update(ev("task_assigned"));
-    n.update(ev("workflow_completed"));
-    CHECK(n.getMessages().size() == 2);
-    CHECK(mail.sentCount == 2);
+    n.update(ev("instance_completed"));
+    CHECK(out.str().find("has been assigned") != std::string::npos);
+    CHECK(out.str().find("is complete") != std::string::npos);
 }

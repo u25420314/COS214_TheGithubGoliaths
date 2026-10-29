@@ -1,10 +1,9 @@
 #pragma once
 #include <memory>
-#include <set>
 #include <string>
 #include <vector>
 #include "WorkflowMediator.h"
-#include "WorkflowSubject.h"
+#include "WorkflowObserver.h"
 #include "Participant.h"
 
 class Task;
@@ -14,38 +13,40 @@ class WorkflowDefinition;
 class WorkflowInstance;
 
 /**
- * The Mediator and the Subject. Tasks report to notify(); the engine decides what
- * happens next (activate follow-on tasks, detect completion, handle undo) and
- * publishes events to attached observers.
+ * The Mediator (receives notify() from tasks and decides what happens next) and
+ * the Subject of the Observer pattern (publishes events to attached observers).
+ *
+ * NOTE: WorkNode, Task and WorkflowInstance must declare "friend class WorkflowEngine;"
+ * so the engine can read the private fields shown in the class diagram.
  */
-class WorkflowEngine : public WorkflowMediator, public WorkflowSubject {
+class WorkflowEngine : public WorkflowMediator {
 public:
     explicit WorkflowEngine(std::vector<Participant> participants = {});
     ~WorkflowEngine() override;
 
-    /** Instantiate a definition, wire every node to this engine, activate the first tasks. */
-    WorkflowInstance& createInstance(const WorkflowDefinition& def, const WorkflowData& data);
+    /** Clone the definition into a new instance, wire its nodes to this engine, activate first tasks. */
+    WorkflowInstance* createInstance(const WorkflowDefinition& d, const WorkflowData& data);
 
-    /** Mediator entry point. Events: "completed", "rejected", "escalated", "undone", ... */
+    /** Observer side. Observers are not owned. */
+    void attach(WorkflowObserver* o);
+    void detach(WorkflowObserver* o);
+    void notifyObservers(const WorkflowEvent& e);
+
+    /** Mediator side: a node reports an event ("completed", "rejected", "escalated", "undone"). */
     void notify(WorkNode* sender, const std::string& event) override;
 
     /** Assign every Available task in the instance whose dependencies are done. */
-    void activateNext(WorkflowInstance& instance);
+    void activateNext(WorkflowInstance& i);
 
-    /** Pick a participant via the task's AssignmentStrategy and assign. */
-    void assign(Task* task);
-
-    void addParticipant(const Participant& p) { participants_.push_back(p); }
-    std::vector<Participant>& getParticipants() { return participants_; }
-    const std::vector<std::unique_ptr<WorkflowInstance>>& getInstances() const { return instances_; }
+    /** Choose a participant with the task's strategy and give the task to them. */
+    void assign(Task* t);
 
 private:
     WorkflowInstance* findInstanceOf(WorkNode* node);
-    void unlockDownstream(WorkflowInstance& instance);
-    void checkFinished(WorkflowInstance& instance);
-    void publish(const std::string& type, const WorkflowInstance& instance, const WorkNode* node);
+    void unlockDownstream(WorkflowInstance& i);
+    void publish(const std::string& type, WorkflowInstance& i, WorkNode* node);
 
-    std::vector<std::unique_ptr<WorkflowInstance>> instances_;
-    std::vector<Participant> participants_;
-    std::set<std::string> finished_;   // ids of instances already announced as complete
+    std::vector<std::unique_ptr<WorkflowInstance>> instances;
+    std::vector<Participant> participants;
+    std::vector<WorkflowObserver*> observers;
 };

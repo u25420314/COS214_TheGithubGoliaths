@@ -5,10 +5,10 @@
 #include <map>
 
 class WorkflowData {
-    map<string, string> fields;
+    std::map<std::string, std::string> fields;
     public:
-    string get(string key);
-    void set(string key, string value);
+    std::string get(std::string key);
+    void set(std::string key, std::string value);
 };
 
 #endif
