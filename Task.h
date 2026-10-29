@@ -20,10 +20,12 @@ public:
     TaskState* getState() const;
 
     void assign(Participant* p);
+    void setAssignee(Participant* p);
     void start();
     void complete();
     void reject();
     void escalate();
+    void cancel();
 
     TaskMemento* createMemento() const;
     void restore(const TaskMemento* m);

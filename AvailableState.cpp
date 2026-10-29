@@ -1,14 +1,14 @@
-#include "AvaliableState.h"
+#include "AvailableState.h"
 #include "AssignedState.h"
 #include "CancelledState.h"
 #include "Task.h"
 #include "Participant.h"
 
-std::string AvaliableSate::getName() const {
+std::string AvailableState::getName() const {
     return "Avaliable";
 }
 
-void AvaliableState::assign(Task* t, Participant* p){
+void AvailableState::assign(Task* t, Participant* p){
     if (!p){
         throw std::invalid_argument("assign requires a participant");
         t->setAssignee(p);
@@ -17,7 +17,7 @@ void AvaliableState::assign(Task* t, Participant* p){
     }
 }
 
-void AvaliableState::cancel(Task* t){
+void AvailableState::cancel(Task* t){
     t->setState(new CancelledStae());
 }
 

@@ -24,8 +24,8 @@ public:
     explicit WorkflowEngine(std::vector<Participant> participants = {});
     ~WorkflowEngine() override;
 
-    /** Clone the definition into a new instance, wire its nodes to this engine, activate first tasks. */
-    WorkflowInstance* createInstance(const WorkflowDefinition& d, const WorkflowData& data);
+    /** Instantiate a definition, wire every node to this engine, activate the first tasks. */
+    WorkflowInstance* createInstance(const WorkflowDefinition& def, const WorkflowData& data);
 
     /** Observer side. Observers are not owned. */
     void attach(WorkflowObserver* o);

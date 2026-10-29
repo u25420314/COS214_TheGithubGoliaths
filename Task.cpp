@@ -35,8 +35,15 @@ TaskState* Task::getState() const {
 }
 
 
-//stores who is doing the task
+//forward to the current state, the state decides what happens (it calls setAssignee)
 void Task::assign(Participant* p) {
+    if (state != nullptr) {
+        state->assign(this, p);
+    }
+}
+
+//stores who is doing the task, called by the states
+void Task::setAssignee(Participant* p) {
     assignee = p;
 }
 
@@ -65,6 +72,13 @@ void Task::reject() {
 void Task::escalate() {
     if (state != nullptr) {
         state->escalate(this);
+    }
+}
+
+//forward to the current state, the state decides what happens
+void Task::cancel() {
+    if (state != nullptr) {
+        state->cancel(this);
     }
 }
 

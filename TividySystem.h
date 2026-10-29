@@ -4,10 +4,13 @@
 #ifndef TIVIDYSYSTEM_H
 #define TIVIDYSYSTEM_H
 
-#include "WorkFlowEngine.h"
+#include "WorkflowEngine.h"
 #include "CommandHistory.h"
 #include "WorkflowDefinition.h"
+#include "WorkflowData.h"
 #include "Participant.h"
+#include "StartWorkflowCommand.h"
+#include "AssignTaskCommand.h"
 
 #include <vector>
 #include <string>
@@ -22,7 +25,7 @@ using namespace std;
  */
 class TividySystem {
     private:
-        WorkFlowEngine engine; ///< The Mediator subsystem
+        WorkflowEngine engine; ///< The Mediator subsystem
         CommandHistory history; ///< The Command subsystem
         vector<WorkflowDefinition*> definitions; ///< The registered workflow definitions
 

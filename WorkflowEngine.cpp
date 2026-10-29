@@ -26,19 +26,19 @@ WorkflowEngine::WorkflowEngine(std::vector<Participant> participants)
 
 WorkflowEngine::~WorkflowEngine() = default;
 
-// ---- Mediator side --------------------------------------------------------
-
-WorkflowInstance* WorkflowEngine::createInstance(const WorkflowDefinition& d,
+WorkflowInstance* WorkflowEngine::createInstance(const WorkflowDefinition& def,
                                                  const WorkflowData& data) {
-    std::unique_ptr<WorkflowInstance> inst(d.instantiate());   // Prototype: deep copy
-    inst->data = data;
-    for (WorkNode* n : allNodes(inst->root.get())) n->mediator = this;
+    // std::unique_ptr<WorkflowInstance> inst = def.instantiate();  // deep clone (Prototype)
+    // inst->getData() = data;
+    // for (WorkNode* n : collectNodes(*inst)) n->setMediator(this);
 
-    instances.push_back(std::move(inst));
-    WorkflowInstance* created = instances.back().get();
-    publish("instance_created", *created, nullptr);
-    activateNext(*created);
-    return created;
+    // instances_.push_back(std::move(inst));
+    // WorkflowInstance& ref = *instances_.back();
+    // publish("workflow_started", ref, nullptr);
+    // activateNext(ref);
+    // return ref;
+
+    return nullptr;
 }
 
 void WorkflowEngine::notify(WorkNode* sender, const std::string& event) {
@@ -56,30 +56,29 @@ void WorkflowEngine::notify(WorkNode* sender, const std::string& event) {
     }
 }
 
-void WorkflowEngine::activateNext(WorkflowInstance& i) {
-    for (WorkNode* n : allNodes(i.root.get())) {
-        Task* t = dynamic_cast<Task*>(n);
-        if (t && t->state->getName() == "Available" && t->canStart()) assign(t);
-    }
+void WorkflowEngine::activateNext(WorkflowInstance& instance) {
+    // for (WorkNode* n : collectNodes(instance)) {
+    //     Task* t = n->asTask();
+    //     if (t && stateName(t) == "Available" && t->canStart()) assign(t);
+    // }
+
+    return;
 }
 
-void WorkflowEngine::assign(Task* t) {
-    if (!t) return;
-    WorkflowInstance* inst = findInstanceOf(t);
-    Participant* chosen = t->strategy ? t->strategy->choose(*t, participants) : nullptr;
-    if (!chosen) {
-        if (inst) publish("task_unassignable", *inst, t);
-        return;
-    }
-    t->assign(chosen);
-    if (inst) publish("task_assigned", *inst, t);
-}
+void WorkflowEngine::assign(Task* task) {
+    // if (!task) return;
+    // WorkflowInstance* inst = findInstanceOf(task);
+    // AssignmentStrategy* strategy = task->getStrategy();
+    // Participant* chosen = strategy ? strategy->choose(*task, participants_) : nullptr;
 
-// ---- Observer side --------------------------------------------------------
+    // if (!chosen) {
+    //     if (inst) publish("task_unassignable", *inst, task);
+    //     return;
+    // }
+    // task->assign(chosen);
+    // if (inst) publish("task_assigned", *inst, task);
 
-void WorkflowEngine::attach(WorkflowObserver* o) {
-    if (o && std::find(observers.begin(), observers.end(), o) == observers.end())
-        observers.push_back(o);
+    return;
 }
 
 void WorkflowEngine::detach(WorkflowObserver* o) {
@@ -102,16 +101,18 @@ WorkflowInstance* WorkflowEngine::findInstanceOf(WorkNode* node) {
     return nullptr;
 }
 
-// Undo knock-on: a task assigned only because its predecessor finished goes back to
-// Available when that predecessor is no longer finished.
-void WorkflowEngine::unlockDownstream(WorkflowInstance& i) {
-    for (WorkNode* n : allNodes(i.root.get())) {
-        Task* t = dynamic_cast<Task*>(n);
-        if (t && t->state->getName() == "Assigned" && !t->canStart()) {
-            t->setState(std::make_unique<AvailableState>());
-            publish("task_unassigned", i, t);
-        }
-    }
+// Undo knock-on: a task that was assigned only because its predecessor was complete
+// must go back to Available if that predecessor is no longer complete.
+void WorkflowEngine::unlockDownstream(WorkflowInstance& instance) {
+    // for (WorkNode* n : collectNodes(instance)) {
+    //     Task* t = dynamic_cast<Task*>(n);
+    //     if (t && stateName(t) == "Assigned" && !t->canStart()) {
+    //         t->unassign();
+    //         publish("task_unassigned", instance, t);
+    //     }
+    // }
+
+    return;
 }
 
 void WorkflowEngine::publish(const std::string& type, WorkflowInstance& i, WorkNode* node) {

@@ -3,7 +3,7 @@
 #ifndef STARTWORKFLOWCOMMAND_H
 #define STARTWORKFLOWCOMMAND_H
 
-#include "WorkFlowDefinition.h"
+#include "WorkflowDefinition.h"
 #include "WorkflowData.h"
 #include "Command.h"
 
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class WorkflowDefinition
+class WorkflowDefinition;
 
 /**
  * @brief The command class that starts a new instance of a workflow definition

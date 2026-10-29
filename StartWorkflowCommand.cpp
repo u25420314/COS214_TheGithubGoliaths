@@ -1,4 +1,7 @@
 #include "StartWorkflowCommand.h"
+#include "WorkflowEngine.h"
+#include "WorkflowInstance.h"
+#include "WorkflowDefinition.h"
 
 #include <string>
 
@@ -9,20 +12,16 @@ StartWorkflowCommand::StartWorkflowCommand(WorkflowEngine* e, WorkflowDefinition
 void StartWorkflowCommand::execute() {
     if(engine == nullptr || definition == nullptr) return;
     
-    WorkflowInstance* instance = engine->createInstance(definition, data);
+    WorkflowInstance* instance = engine->createInstance(*definition, data);
     if(instance != nullptr) {
-        createdId = instance->getId()
+        createdId = instance->getId();
     }
 }
 
 void StartWorkflowCommand::undo() {
-
+    return;
 }
 
 string StartWorkflowCommand::getCreatedId() const {
     return createdId;
-}
-
-StartWorkflowCommand::~StartWorkflowCommand() {
-    delete backup;
 }
