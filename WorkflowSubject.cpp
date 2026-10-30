@@ -12,10 +12,8 @@ void WorkflowSubject::detach(WorkflowObserver* o) {
 }
 
 void WorkflowSubject::notifyObservers(const WorkflowEvent& e) {
-    // Iterate over a snapshot so observers may attach/detach while being notified.
     std::vector<WorkflowObserver*> snapshot = observers_;
     for (WorkflowObserver* o : snapshot) {
-        // Skip anyone detached earlier in this same loop.
         if (std::find(observers_.begin(), observers_.end(), o) != observers_.end())
             o->update(e);
     }
