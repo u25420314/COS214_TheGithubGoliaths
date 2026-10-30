@@ -1,0 +1,47 @@
+#include "gui.h"
+
+using namespace ftxui;
+
+TividyGUI::TividyGUI(TividySystem& system) {
+    (void)system;  // TODO
+}
+
+TividyGUI::~TividyGUI() {}
+
+void TividyGUI::run() {
+    // TODO
+}
+
+// ---- rendering ----
+
+Element TividyGUI::render() { return text("TODO"); }
+Element TividyGUI::renderIndustrySelect() { return text("TODO"); }
+Element TividyGUI::renderStartInstance() { return text("TODO"); }
+Element TividyGUI::renderWorkList() { return text("TODO"); }
+Element TividyGUI::renderTaskActions() { return text("TODO"); }
+Element TividyGUI::renderProgress() { return text("TODO"); }
+Element TividyGUI::renderHistory() { return text("TODO"); }
+
+// ---- input ----
+
+bool TividyGUI::handleInput(Event event) { (void)event; return false; }
+bool TividyGUI::handleIndustryInput(Event event) { (void)event; return false; }
+bool TividyGUI::handleStartInstanceInput(Event event) { (void)event; return false; }
+bool TividyGUI::handleWorkListInput(Event event) { (void)event; return false; }
+bool TividyGUI::handleTaskActionsInput(Event event) { (void)event; return false; }
+bool TividyGUI::handleProgressInput(Event event) { (void)event; return false; }
+bool TividyGUI::handleHistoryInput(Event event) { (void)event; return false; }
+
+// ---- actions ----
+
+void TividyGUI::startSelectedWorkflow() {}
+void TividyGUI::assignSelectedTask() {}
+void TividyGUI::completeSelectedTask() {}
+void TividyGUI::approveSelectedTask() {}
+void TividyGUI::rejectSelectedTask() {}
+void TividyGUI::undoLastAction() {}
+
+// ---- data loading ----
+
+void TividyGUI::loadAvailableTasks() {}
+void TividyGUI::loadHistory() {}
