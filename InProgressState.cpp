@@ -22,6 +22,6 @@ void InProgressState::escalate(Task* t){
 }
 
 void InProgressState::cancel(Task* t){
-    t->setState(new CancelledStae());
+    t->setState(new CancelledState());
 }
 

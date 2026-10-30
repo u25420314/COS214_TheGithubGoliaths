@@ -49,9 +49,10 @@ public:
 
     bool isComplete() const override;
 
-protected:
-
     bool canStart() const override;
+    Task* asTask() override { return this; }
+
+protected:
 
     void doWork() override;
 

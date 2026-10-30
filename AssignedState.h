@@ -9,6 +9,7 @@ class AssignedState : public TaskState {
         void start(Task* t) override;
         void cancel(Task* t) override;
         std::string getName() const override;
+        TaskState* clone() const override { return new AssignedState(*this); }
 };
 
 #endif

@@ -12,6 +12,6 @@ void AssignedState::start(Task* t) {
 }
 
 void AssignedState::cancel(Task* t) {
-    t->setState(new CancelledStae());
+    t->setState(new CancelledState());
 }
 

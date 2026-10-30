@@ -35,24 +35,24 @@ string TividySystem::startWorkflow(string defName, WorkflowData data) {
     StartWorkflowCommand* command = new StartWorkflowCommand(&engine, chosenDef, data);
     history.executeCommand(command);
     
-    return command->getCreatedID();
+    return command->getCreatedId();
 }
 
 // Creates assign command and gives to history
 void TividySystem::assignTask(string taskId, Participant* p) {
-    if(p == nullptr) {
-        cout << "null participant cant be assigned a task\n";
-        return;
-    }
+    // if(p == nullptr) {
+    //     cout << "null participant cant be assigned a task\n";
+    //     return;
+    // }
 
-    Task* task = engine.findTask(taskId);
+    // Task* task = engine.findTask(taskId);
 
-    if(task == nullptr) {
-        cout << "Task not found\n";
-        return;
-    }
+    // if(task == nullptr) {
+    //     cout << "Task not found\n";
+    //     return;
+    // }
 
-    history.executeCommand(new AssignTaskCommand(&engine, task, p));
+    // history.executeCommand(new AssignTaskCommand(&engine, task, p));
     
     return;
 }
@@ -62,11 +62,11 @@ void TividySystem::undoLast() {
 }
 
 string TividySystem::getProgress(string instanceId) {
-    return engine.getProgress(instanceId);
+    return "engine.getProgress(instanceId)";
 }
 
 TividySystem::~TividySystem() {
     for(WorkflowDefinition* definition : definitions) {
-        delete d;
+        delete definition;
     }
 }

@@ -10,14 +10,22 @@
 #include "WorkflowDefinition.h"
 #include "WorkflowInstance.h"
 
+#include<string>
+
 namespace {
-std::vector<WorkNode*> allNodes(WorkNode* root) {
-    std::vector<WorkNode*> nodes;
-    if (!root) return nodes;
-    auto it = root->createIterator();
-    for (it->first(); !it->isDone(); it->next()) nodes.push_back(it->current());
-    return nodes;
-}
+    std::vector<WorkNode*> allNodes(WorkNode* root) {
+        std::vector<WorkNode*> nodes;
+        if (!root) return nodes;
+        auto it = root->createIterator();
+        for (it->first(); !it->isDone(); it->next()) nodes.push_back(it->current());
+        return nodes;
+    }
+
+    std::vector<WorkNode*> collectNodes(WorkflowInstance& instance) {
+        return allNodes(instance.getRoot());
+    }
+
+    std::string stateName(Task* t) { return t->getState()->getName(); }
 }  // namespace
 
 WorkflowEngine::WorkflowEngine(std::vector<Participant> participants)
@@ -25,19 +33,16 @@ WorkflowEngine::WorkflowEngine(std::vector<Participant> participants)
 
 WorkflowEngine::~WorkflowEngine() = default;
 
-WorkflowInstance* WorkflowEngine::createInstance(const WorkflowDefinition& def,
-                                                 const WorkflowData& data) {
-    std::unique_ptr<WorkflowInstance> inst = def.instantiate();  // deep clone (Prototype)
+WorkflowInstance* WorkflowEngine::createInstance(const WorkflowDefinition& def, const WorkflowData& data) {
+    std::unique_ptr<WorkflowInstance> inst(def.instantiate("INST-" + std::to_string(instances.size() + 1)));  // deep clone (Prototype)
     inst->getData() = data;
     for (WorkNode* n : collectNodes(*inst)) n->setMediator(this);
 
-    instances_.push_back(std::move(inst));
-    WorkflowInstance& ref = *instances_.back();
+    instances.push_back(std::move(inst));
+    WorkflowInstance& ref = *instances.back();
     publish("workflow_started", ref, nullptr);
     activateNext(ref);
-    return ref;
-
-    return nullptr;
+    return &ref;
 }
 
 void WorkflowEngine::notify(WorkNode* sender, const std::string& event) {
@@ -68,7 +73,10 @@ void WorkflowEngine::assign(Task* task) {
     if (!task) return;
     WorkflowInstance* inst = findInstanceOf(task);
     AssignmentStrategy* strategy = task->getStrategy();
-    Participant* chosen = strategy ? strategy->choose(*task, participants_) : nullptr;
+    
+    std::vector<Participant*> pool;
+    for(Participant& p : participants) pool.push_back(&p);
+    Participant* chosen = strategy ? strategy->choose(*task, pool) : nullptr;
 
     if (!chosen) {
         if (inst) publish("task_unassignable", *inst, task);
@@ -95,7 +103,7 @@ void WorkflowEngine::notifyObservers(const WorkflowEvent& e) {
 WorkflowInstance* WorkflowEngine::findInstanceOf(WorkNode* node) {
     if (!node) return nullptr;
     for (auto& inst : instances)
-        for (WorkNode* n : allNodes(inst->root.get()))
+        for (WorkNode* n : collectNodes(*inst))
             if (n == node) return inst.get();
     return nullptr;
 }
@@ -106,7 +114,10 @@ void WorkflowEngine::unlockDownstream(WorkflowInstance& instance) {
     for (WorkNode* n : (instance)) {
         Task* t = dynamic_cast<Task*>(n);
         if (t && stateName(t) == "Assigned" && !t->canStart()) {
-            t->unassign();
+            
+            t->setAssignee(nullptr);
+            t->setState(new AvailableState());
+
             publish("task_unassigned", instance, t);
         }
     }
@@ -115,5 +126,16 @@ void WorkflowEngine::unlockDownstream(WorkflowInstance& instance) {
 }
 
 void WorkflowEngine::publish(const std::string& type, WorkflowInstance& i, WorkNode* node) {
-    notifyObservers(WorkflowEvent(type, i.id, node ? node->id : ""));
+    notifyObservers(WorkflowEvent(type, i.getId(), node ? node->getId() : ""));
+}
+
+Task* WorkflowEngine::findTask(const std::string& taskId) {
+    for(auto& inst : instances) {
+        for(WorkNode* n : collectNodes(*inst)) {
+            Task* t = n->asTask();
+            if(t && t->getId() == taskId) return t;
+        }
+    }
+
+    return nullptr;
 }

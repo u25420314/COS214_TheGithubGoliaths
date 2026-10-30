@@ -41,6 +41,8 @@ public:
     /** Choose a participant with the task's strategy and give the task to them. */
     void assign(Task* t);
 
+    Task* findTask(const std::string& taskId);
+
 private:
     WorkflowInstance* findInstanceOf(WorkNode* node);
     void unlockDownstream(WorkflowInstance& i);

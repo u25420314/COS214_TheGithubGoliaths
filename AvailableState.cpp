@@ -18,6 +18,6 @@ void AvailableState::assign(Task* t, Participant* p){
 }
 
 void AvailableState::cancel(Task* t){
-    t->setState(new CancelledStae());
+    t->setState(new CancelledState());
 }
 
