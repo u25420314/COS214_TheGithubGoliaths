@@ -8,13 +8,17 @@ TividyGUI::TividyGUI(TividySystem& system) {
 
 TividyGUI::~TividyGUI() {}
 
-void TividyGUI::run() {
-    // TODO
-}
-
 // ---- rendering ----
 
-Element TividyGUI::render() { return text("TODO"); }
+Element TividyGUI::render() { 
+    return vbox({
+        text("TIVIDY GUI SYSTEM") | bold | center,
+        separator(),
+        text("Press 'q' or 'Esc' to quit.") | center,
+        filler()
+    }) | border;
+}
+
 Element TividyGUI::renderIndustrySelect() { return text("TODO"); }
 Element TividyGUI::renderStartInstance() { return text("TODO"); }
 Element TividyGUI::renderWorkList() { return text("TODO"); }
@@ -45,3 +49,25 @@ void TividyGUI::undoLastAction() {}
 
 void TividyGUI::loadAvailableTasks() {}
 void TividyGUI::loadHistory() {}
+
+void TividyGUI::run() {
+    // Create the interactive screen
+    auto screen = ScreenInteractive::TerminalOutput();
+
+    // Create a basic component that uses your render() function
+    auto renderer = Renderer([this] {
+        return render(); 
+    });
+
+    // Add a way to quit (capture screen by reference!)
+    auto component = CatchEvent(renderer, [&screen](Event event) {
+        if (event == Event::Character('q') || event == Event::Escape) {
+            screen.ExitLoopClosure()();
+            return true;
+        }
+        return false;
+    });
+
+    // Start the loop
+    screen.Loop(component);
+}
