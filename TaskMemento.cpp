@@ -4,9 +4,20 @@
 
 using namespace std;
 
-TaskMemento::TaskMemento(string stateName, string assigneeid, WorkflowData payload, string timestamp) {
-    this->stateName = stateName;
-    this->assigneeid = assigneeid;
-    this->payload = payload;
-    this->timestamp = timestamp;
+TaskMemento::TaskMemento(TaskState* state, Participant* assignee) {
+    this->state = state;
+    this->assignee = assignee;
+}
+
+TaskState* TaskMemento::getState() const {
+    return state;
+}
+
+Participant* TaskMemento::getAssignee() const {
+    return assignee;
+}
+
+TaskMemento::~TaskMemento() {
+    delete state;
+    delete assignee;
 }

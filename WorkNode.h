@@ -6,6 +6,7 @@
 
 class WorkflowMediator;
 class WorkNodeIterator;
+class Task;
 
 class WorkNode {
 public:
@@ -28,10 +29,10 @@ public:
     const std::string& getName() const;
     virtual void setMediator(WorkflowMediator* m);
     WorkflowMediator* getMediator() const;
+    virtual bool canStart() const;
+    virtual Task* asTask() { return nullptr; }
 
 protected:
-
-    virtual bool canStart() const;
     virtual void doWork() = 0;
     virtual void finish();
 

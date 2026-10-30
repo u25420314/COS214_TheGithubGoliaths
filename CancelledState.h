@@ -4,10 +4,11 @@
 #include "TaskState.h"
 
 
-class CancelledStae : public TaskState {
+class CancelledState : public TaskState {
     public:
-        std::string getName() const override;
         bool isTerminal() const override {return true; } //every action is refusedd since task was canclled
+        std::string getName() const override { return "Cancelled"; }
+        TaskState* clone() const override { return new CancelledState(*this); }
 };
 
 #endif

@@ -4,6 +4,8 @@
 #define TASKMEMENTO_H
 
 #include "WorkflowData.h"
+#include "TaskState.h"
+#include "Participant.h"
 
 #include <string>
 
@@ -14,17 +16,23 @@ using namespace std;
  */
 class TaskMemento {
     private:
-        string stateName; ///< The name of the tasksState
-        string assigneeid; ///< The id of the assignee
-        WorkflowData payload; ///< The data that the task needs
-        string timestamp; ///< The time it was made
+        TaskState* state; ///< The name of the tasksState
+        Participant* assignee; ///< The id of the assignee
     public:
         /// @brief Creates the memento
-        /// @param stateName the stateName passed in
-        /// @param assigneeid the assigneeid passed in
-        /// @param payload the payload passed in
-        /// @param timestamp the timestamp passed in
-        TaskMemento(string stateName, string assigneeid, WorkflowData payload, string timestamp);
+        /// @param state the stateName passed in
+        /// @param assignee the assigneeid passed in
+        TaskMemento(TaskState* state, Participant* assignee);
+
+        /// @brief Gets the State
+        /// @return returns stateName
+        TaskState* getState() const;
+
+        /// @brief gets the participant
+        /// @return returns assigneeId
+        Participant* getAssignee() const;
+
+        ~TaskMemento();
 };
 
 #endif

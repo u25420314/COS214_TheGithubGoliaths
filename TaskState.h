@@ -28,7 +28,9 @@ class TaskState {
 
         virtual std::string getName() const = 0;
         virtual bool isTerminal() const {return false; }//returns true if no further transtions are possible
-    
+
+        virtual TaskState* clone() const = 0;
+        virtual bool isComplete() const { return false; }
 };
 
 #endif
