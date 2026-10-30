@@ -111,7 +111,7 @@ WorkflowInstance* WorkflowEngine::findInstanceOf(WorkNode* node) {
 // Undo knock-on: a task that was assigned only because its predecessor was complete
 // must go back to Available if that predecessor is no longer complete.
 void WorkflowEngine::unlockDownstream(WorkflowInstance& instance) {
-    for (WorkNode* n : collectNodes(instance)) {
+    for (WorkNode* n : (std::vector<WorkNode*>&)instance) {
         Task* t = dynamic_cast<Task*>(n);
         if (t && stateName(t) == "Assigned" && !t->canStart()) {
             
