@@ -6,7 +6,7 @@
 #include "Task.h"
 
 void InProgressState::complete(Task* t){
-    t-setstate(new CompletedState());
+    t->setState(new CompletedState());
 }
 
 std::string InProgressState::getName() const {
@@ -14,14 +14,14 @@ std::string InProgressState::getName() const {
 }
 
 void InProgressState::reject(Task* t){
-    t-setstate(new RejectedState());
+    t->setState(new RejectedState());
 }
 
 void InProgressState::escalate(Task* t){
-    t-setstate(new EscalatedState());
+    t->setState(new EscalatedState());
 }
 
 void InProgressState::cancel(Task* t){
-    t-setstate(new CancelledStae());
+    t->setState(new CancelledState());
 }
 

@@ -11,7 +11,12 @@ CommandHistory::CommandHistory() {}
 void CommandHistory::executeCommand(Command* c) {
     if(c == nullptr) return;
 
-    c->execute();
+    try {
+        c->execute();
+    } catch(...) {
+        delete c;
+        throw;
+    }
     
     done.push_back(c);
 }
