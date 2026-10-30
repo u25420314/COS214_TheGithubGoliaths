@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14) # Changed from 3.10 to 3.14 (FetchContent requires this)
 
 project(TIVIDY LANGUAGES CXX)
 
@@ -12,19 +12,19 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(-Wall -Wextra -pedantic)
 endif()
 
-# FTXUI stuff
+# --- NEW: DOWNLOAD FTXUI AUTOMATICALLY ---
 include(FetchContent)
 FetchContent_Declare(
     ftxui
     GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI.git
-    GIT_TAG         v5.0.0
+    GIT_TAG        v5.0.0  # Using a stable release version
 )
 
+# Turn off FTXUI's examples and tests so it compiles faster
 set(FTXUI_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(FTXUI_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(ftxui)
-
-# End of FTXUI stuff
+# -----------------------------------------
 
 # Find all .cpp files
 file(GLOB_RECURSE ALL_SOURCES CONFIGURE_DEPENDS
@@ -51,11 +51,12 @@ if(ALL_SOURCES)
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
         "${CMAKE_CURRENT_SOURCE_DIR}/src"
     )
-endif()
-
-# FTXUI stuff
+    
+    # --- NEW: LINK FTXUI TO YOUR CORE LIBRARY ---
+    # Because GUI.cpp is in your core library, the core library needs FTXUI
     target_link_libraries(tividy_core PUBLIC ftxui::screen ftxui::dom ftxui::component)
-# End FTXUI stuff
+    # --------------------------------------------
+endif()
 
 # Create executable
 if(EXISTS "${MAIN_SOURCE}")
