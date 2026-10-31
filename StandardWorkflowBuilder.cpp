@@ -1,6 +1,9 @@
 #include "StandardWorkflowBuilder.h"
+#include "PriorityDecorator.h"
 #include "Stage.h"
 #include "Task.h"
+#include "RoleBasedAssignment.h"
+
 #include <stdexcept>
 
 //Constructor: starts with no root, no open stages and nextID = 1
@@ -8,6 +11,8 @@ StandardWorkflowBuilder::StandardWorkflowBuilder() {
     this->workflowName = "";
     this->root = nullptr;
     this->nextId = 1;
+    this->lastTask = nullptr;
+    this->lastNode = nullptr;
 }
 
 //Destructor deletes the root if it still owns one
@@ -27,6 +32,9 @@ void StandardWorkflowBuilder::reset() {
     openStages.clear();
     workflowName = "";
     nextId = 1;
+
+    lastTask = nullptr;
+    lastNode = nullptr;
 }
 
 //stores the name
@@ -55,7 +63,21 @@ void StandardWorkflowBuilder::addTask(const std::string& name, const std::string
         throw std::logic_error("StandardWorkflowBuilder: addTask() needs an open stage");
     }
 
-    openStages.back()->add(new Task(newId(), name, role));
+    Task* t = new Task(newId(), name, role);
+
+    static RoleBasedAssignment defaultStrategy;
+    t->setStrategy(&defaultStrategy);
+
+    openStages.back()->add(t);
+    lastTask = t;
+}
+
+void StandardWorkflowBuilder::withApprovalChain(ApprovalHandler* chain) {
+    if(lastTask == nullptr) {
+        throw std::logic_error("Needs a task first");
+    }
+
+    lastTask->setApprovalChain(chain);
 }
 
 //pops the top stage, it throws if none is open
@@ -75,4 +97,16 @@ WorkflowDefinition StandardWorkflowBuilder::getResult() {
     root = nullptr;
     reset();
     return result;
+}
+
+void StandardWorkflowBuilder::withPriority(int level) {
+    if(lastNode == nullptr || openStages.empty()) {
+        throw std::logic_error("needs a task first");
+    }
+
+    Stage* stage = openStages.back();
+    stage->remove(lastNode);
+
+    lastNode = new PriorityDecorator(lastNode, level);
+    stage->add(lastNode);
 }

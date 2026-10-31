@@ -4,6 +4,8 @@
 #include <string>
 #include "WorkflowDefinition.h"
 
+class ApprovalHandler;
+
 class WorkflowBuilder {
 public:
     virtual ~WorkflowBuilder() {}
@@ -15,6 +17,10 @@ public:
 
     virtual void addTask(const std::string& name, const std::string& role) = 0;
     virtual void endStage() = 0;
+
+    virtual void withApprovalChain(ApprovalHandler *chain) = 0;
+
+    virtual void withPriority(int level) = 0;
 
     virtual WorkflowDefinition getResult() = 0;
 };

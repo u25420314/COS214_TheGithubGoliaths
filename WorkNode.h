@@ -31,6 +31,7 @@ public:
     WorkflowMediator* getMediator() const;
     virtual bool canStart() const;
     virtual Task* asTask() { return nullptr; }
+    virtual void collectReady(std::vector<Task*>& out) = 0;
 
 protected:
     virtual void doWork() = 0;

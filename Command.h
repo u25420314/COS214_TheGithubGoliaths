@@ -26,7 +26,7 @@ class Command {
         virtual void undo() = 0;
 
         /// @brief ConcreteCommands are deleted through the virtual destructor
-        virtual ~Command();
+        virtual ~Command() {}
 };
 
 #endif
