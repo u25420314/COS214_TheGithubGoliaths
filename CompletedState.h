@@ -7,7 +7,7 @@
 class CompletedState : public TaskState {
     public:
         
-        std::string getName() const override { return "Completed"; }
+        std::string getName() const override;
         TaskState* clone() const override { return new CompletedState(*this); }
         bool isTerminal() const override { return true; }
         bool isComplete() const override { return true; }
