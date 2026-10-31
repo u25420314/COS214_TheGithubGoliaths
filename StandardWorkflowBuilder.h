@@ -5,6 +5,8 @@
 #include <vector>
 #include "WorkflowBuilder.h"
 
+class Task;
+class WorkNode;
 class Stage;
 
 class StandardWorkflowBuilder : public WorkflowBuilder {
@@ -17,6 +19,9 @@ public:
     void beginStage(const std::string& name, bool parallel) override;
     void addTask(const std::string& name, const std::string& role) override;
     void endStage() override;
+    void withApprovalChain(ApprovalHandler* chain) override;
+    void withPriority(int level) override;
+
     WorkflowDefinition getResult() override;
 
 private:
@@ -26,6 +31,9 @@ private:
     Stage* root;
     std::vector<Stage*> openStages;
     int nextId;
+    WorkNode* lastNode;
+
+    Task* lastTask;
 };
 
 #endif

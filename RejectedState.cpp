@@ -3,7 +3,7 @@
 #include "Task.h"
 #include "Participant.h"
 
-std::string RejectedState::getName() const { \
+std::string RejectedState::getName() const {
     return "Rejected";
 }
 

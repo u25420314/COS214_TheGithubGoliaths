@@ -5,7 +5,9 @@
 
 using namespace std;
 
-TividySystem::TividySystem() {}
+TividySystem::TividySystem(vector<Participant> participants) : engine(participants) {
+    engine.attach(&auditLogger);
+}
 
 // Adds definition to the definitions
 void TividySystem::registerDefinition(WorkflowDefinition* d) {
@@ -40,29 +42,38 @@ string TividySystem::startWorkflow(string defName, WorkflowData data) {
 
 // Creates assign command and gives to history
 void TividySystem::assignTask(string taskId, Participant* p) {
-    // if(p == nullptr) {
-    //     cout << "null participant cant be assigned a task\n";
-    //     return;
-    // }
+    if(p == nullptr) return;
 
-    // Task* task = engine.findTask(taskId);
+    Task* task = engine.findTask(taskId);
+    if(task == nullptr) return;
 
-    // if(task == nullptr) {
-    //     cout << "Task not found\n";
-    //     return;
-    // }
+    history.executeCommand(new AssignTaskCommand(&engine, task, p));
+}
 
-    // history.executeCommand(new AssignTaskCommand(&engine, task, p));
-    
-    return;
+void TividySystem::startTask(string taskId) {
+    Task* task = engine.findTask(taskId);
+    if(task == nullptr) return;
+    history.executeCommand(new StartTaskCommand(&engine, task));
+}
+
+void TividySystem::completeTask(string taskId) {
+    Task* task = engine.findTask(taskId);
+    if(task == nullptr) return;
+    history.executeCommand(new CompleteTaskCommand(&engine, task, task->getAssignee()));
+}
+
+void TividySystem::rejectTask(string taskId) {
+    Task* task = engine.findTask(taskId);
+    if(task == nullptr) return;
+    history.executeCommand(new RejectTaskCommand(&engine, task));
+}
+
+vector<string> TividySystem::getHistory() const {
+    return auditLogger.getEntries();
 }
 
 void TividySystem::undoLast() {
     history.undo();
-}
-
-string TividySystem::getProgress(string instanceId) {
-    return "engine.getProgress(instanceId)";
 }
 
 TividySystem::~TividySystem() {

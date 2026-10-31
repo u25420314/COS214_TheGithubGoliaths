@@ -11,6 +11,11 @@
 #include "Participant.h"
 #include "StartWorkflowCommand.h"
 #include "AssignTaskCommand.h"
+#include "CompleteTaskCommand.h"
+#include "StartTaskCommand.h"
+#include "RejectTaskCommand.h"
+#include "Task.h"
+#include "AuditLogger.h"
 
 #include <vector>
 #include <string>
@@ -26,14 +31,18 @@ using namespace std;
 class TividySystem {
     private:
         WorkflowEngine engine; ///< The Mediator subsystem
+        AuditLogger auditLogger; ///< Records every event (Observer)
         CommandHistory history; ///< The Command subsystem
         vector<WorkflowDefinition*> definitions; ///< The registered workflow definitions
+
+        
 
     public:
         /**
          * @brief The constructor sets up the System
+         * @param particpants The participants involved in the system
          */
-        TividySystem();
+        TividySystem(vector<Participant> participants = {});
 
         /// @brief Adds a new Definition to the definitions vector
         /// @param d The definition to be added
@@ -50,13 +59,24 @@ class TividySystem {
         /// @param p The participant to assign the task to
         void assignTask(string taskId, Participant* p);
 
+        /// @brief Marks an assigned task as started
+        /// @param taskId
+        void startTask(string taskId);
+
+        /// @brief Marks an assigned task as completed
+        /// @param taskId
+        void completeTask(string taskId);
+
+        /// @brief Marks an assigned task as rejected
+        /// @param taskId
+        void rejectTask(string taskId);
+
         /// @brief undo the last action recently done
         void undoLast();
 
-        /// @brief get the progress of a certain instance 
-        /// @param instanceId The id of the instance to get the progress of
-        /// @return The progress returned from the engine
-        string getProgress(string instanceId);
+        /// @brief Get every event recorded so far
+        /// @return the history
+        vector<string> getHistory() const;
 
         /// @brief Destruct the object by deleting its definition vector
         ~TividySystem();

@@ -108,3 +108,11 @@ void Stage::doWork() {
         ready[i]->run();
     }
 }
+
+void Stage::collectReady(std::vector<Task*>& out) {
+    std::vector<WorkNode*> ready = getReadyChildren();
+
+    for(size_t i = 0; i < ready.size(); i++) {
+        ready[i]->collectReady(out);
+    }
+}

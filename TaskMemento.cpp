@@ -19,5 +19,4 @@ Participant* TaskMemento::getAssignee() const {
 
 TaskMemento::~TaskMemento() {
     delete state;
-    delete assignee;
 }

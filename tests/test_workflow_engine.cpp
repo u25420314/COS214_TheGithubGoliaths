@@ -9,6 +9,8 @@
 #include "WorkflowEngine.h"
 #include "WorkflowInstance.h"
 
+#include <algorithm>
+
 namespace {
 struct Recorder : WorkflowObserver {
     std::vector<std::string> types;
