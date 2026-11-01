@@ -75,7 +75,7 @@ private:
     int offset_;
 };
 
-}  // namespace
+}  
 
 TividyGUI::TividyGUI(TividySystem& sys, ftxui::ScreenInteractive& scr, const std::vector<std::string>& defs) 
     : system(sys), screen(scr), available_definitions(defs) {
@@ -363,9 +363,6 @@ Component TividyGUI::buildAuditTab() {
     });
 }
 
-// ============================================================================
-// AUTO-RUN LOGIC (Now smart enough to skip already-completed tasks)
-// ============================================================================
 std::vector<std::string> TividyGUI::pendingTasks(const std::string& instance_id, const std::set<std::string>& skip) {
     std::set<std::string> done;
     std::vector<std::string> assigned;
@@ -460,7 +457,6 @@ void TividyGUI::runInsuranceDemo() {
             logEvent("Started Instance " + id);
 
             std::set<std::string> skipped;
-            // Phase 1: Advance to n7
             for (int guard = 0; guard < 50; guard++) {
                 std::vector<std::string> pending = pendingTasks(id, skipped);
                 bool found_n7 = false;
@@ -486,7 +482,7 @@ void TividyGUI::runInsuranceDemo() {
                 }
             }
 
-            // Phase 2: n7 reject test
+            
             std::vector<std::string> pending_now = pendingTasks(id, skipped);
             bool n7_exists = false;
             for (const auto& p : pending_now) if (p == "n7") n7_exists = true;
@@ -501,7 +497,7 @@ void TividyGUI::runInsuranceDemo() {
                 for (const auto& p : pending_now) logEvent("  pending: " + p);
             }
 
-            // Phase 3: Finish up
+            
             for (int guard = 0; guard < 50 && !finished(id); guard++) {
                 std::vector<std::string> pending = pendingTasks(id, skipped);
                 if (pending.empty()) break;
