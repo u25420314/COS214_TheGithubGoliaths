@@ -31,7 +31,7 @@ WorkflowDefinition* buildGoliathUniversityWorkflow() {
     return new WorkflowDefinition(builder.getResult());
 }
 
-// Insurance industry: a policyholder claims for hail damage to a vehicle
+
 WorkflowDefinition* buildInsuranceClaimWorkflow() {
     WorkflowDirector director("Goliath Insurance Claim");
     director.stage("Claim Process", false)
@@ -39,7 +39,7 @@ WorkflowDefinition* buildInsuranceClaimWorkflow() {
                     .task("Capture claim details", "Claims Clerk")
                     .task("Verify policy is active", "Claims Clerk")
                 .end()
-                .stage("Assessment", true)                    // these three at the same time
+                .stage("Assessment", true)
                     .task("Assess damage", "Assessor")
                     .task("Run fraud check", "Fraud Investigator")
                     .task("Check policy cover", "Claims Clerk")
@@ -58,11 +58,9 @@ WorkflowDefinition* buildInsuranceClaimWorkflow() {
 
 std::vector<Participant> scenarioParticipants() {
     return {
-        // Goliath University
         Participant("uni-1", "Nathan", {"Admissions Officer"}),
         Participant("uni-2", "Chris", {"Head of Degree"}),
         Participant("uni-3", "Jack", {"Head of Faculty"}),
-        // Goliath Insurance
         Participant("ins-1", "Chris", {"Claims Clerk"}),
         Participant("ins-2", "Jack", {"Assessor"}),
         Participant("ins-3", "Nathan", {"Fraud Investigator"}),
