@@ -5,7 +5,7 @@
 
 using namespace ftxui;
 
-TividyGUI::TividyGUI(TividySystem& sys) : system(sys), screen(ftxui::ScreenInteractive::Fullscreen()) {
+TividyGUI::TividyGUI(TividySystem& sys, ftxui::ScreenInteractive& scr) : system(sys), screen(scr) {
     logEvent("TIVIDY Core Initialized.");
 
     tab_toggle = Radiobox(&tab_titles, &active_tab);
@@ -178,7 +178,7 @@ Component TividyGUI::buildBuilderTab() {
         btn_add_task | border,
         Renderer([] { return separator(); }),
         btn_finish | border | color(Color::Green),
-        filler(),
+        Renderer([] {return filler(); }),
         Renderer([this] {
             Elements els;
             els.push_back(text("Current Build Tree:") | underlined);
@@ -252,7 +252,7 @@ Component TividyGUI::buildTasksTab() {
         Renderer([] { return text("Select Participant:"); }),
         dropdown | border,
         btn_assign | border | color(Color::Cyan),
-        filler(),
+        Renderer([] { return filler(); }), 
         Renderer([this] {
             if (localParticipants.empty()) return text("WARNING: Register participants first!") | color(Color::Red);
             return text("");

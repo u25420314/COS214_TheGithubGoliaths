@@ -12,7 +12,7 @@
 class TividyGUI {
 private:
     TividySystem& system;
-    ftxui::ScreenInteractive screen;
+    ftxui::ScreenInteractive& screen;
 
     // --- GUI Local State ---
     std::vector<WorkflowDefinition*> localDefinitions;
@@ -51,7 +51,7 @@ private:
     ftxui::Component buildAuditTab();
 
 public:
-    TividyGUI(TividySystem& sys);
+    TividyGUI(TividySystem& sys, ftxui::ScreenInteractive& scr);
     
     // Prevent copying (fixes the FTXUI ScreenInteractive copy error)
     TividyGUI(const TividyGUI&) = delete;
