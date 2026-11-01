@@ -13,11 +13,13 @@ class ValidationDecorator : public TaskDecorator {
     private:
         std::vector<std::string> requiredFields;
         const WorkflowData* data;
-    protected:
+    
 
-        bool canStart() const override;
+       
 
     public:
+
+        bool canStart() const override;
         ValidationDecorator(WorkNode* wrapped, const std::vector<std::string>& requiredFields);
 
         void bindData(const WorkflowData* data); //data srouce for the validation instance of workflowdata

@@ -9,6 +9,7 @@ class TaskDecorator : public WorkNode {
     protected:
         void doWork() override;
         WorkNode* wrapped; //owned variable
+        void finish() override;
     public:
         explicit TaskDecorator(WorkNode* wrapped);
         virtual ~TaskDecorator();
