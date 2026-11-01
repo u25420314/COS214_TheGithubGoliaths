@@ -93,16 +93,11 @@ void WorkflowEngine::detach(WorkflowObserver* o) {
     observers.erase(std::remove(observers.begin(), observers.end(), o), observers.end());
 }
 
-<<<<<<< HEAD
 void WorkflowEngine::attach(WorkflowObserver* o){
     auto it = std::find(observers.begin(), observers.end(), o);
     if(it == observers.end()){
         observers.emplace_back(o);
     }
-=======
-void WorkflowEngine::attach(WorkflowObserver* o) {
-    if(o && std::find(observers.begin(), observers.end(), o) == observers.end()) observers.push_back(o);
->>>>>>> 724522ab2774f8fb5b1bac95dae68c9c9c593632
 }
 
 void WorkflowEngine::notifyObservers(const WorkflowEvent& e) {

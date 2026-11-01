@@ -4,7 +4,6 @@
 #include <ftxui/component/component.hpp>
 #include <ftxui/component/screen_interactive.hpp>
 #include <ftxui/dom/elements.hpp>
-
 #include <string>
 #include <vector>
 #include "TividySystem.h"
@@ -12,51 +11,45 @@
 class TividyGUI {
 private:
     TividySystem& system;
-    ftxui::ScreenInteractive& screen;
+    ftxui::ScreenInteractive& screen; 
+    std::vector<std::string> available_definitions;
 
-    // --- GUI Local State ---
-    std::vector<WorkflowDefinition*> localDefinitions;
     std::vector<Participant*> localParticipants;
     std::vector<std::string> localInstanceIds;
-    std::vector<std::string> auditLog;
+    std::vector<std::string> audit_lines;
+    int audit_selected = 0;
+    int selected_instance = 0;
 
-    // --- Navigation ---
     int active_tab = 0;
-    std::vector<std::string> tab_titles = {"Dashboard", "Builder", "Instances", "Tasks", "Audit Log"};
-    ftxui::Component tab_toggle;
+    std::vector<std::string> tab_titles = {"Dashboard", "Instances", "Tasks", "Audit Log"};
+    ftxui::Component tab_menu;
     ftxui::Component main_container;
     ftxui::Component participant_modal;
     bool show_participant_modal = false;
 
-    // --- Form Inputs ---
     std::string p_id, p_name, p_role;
-    std::string inst_def_name;
+    int selected_def_idx = 0;
     std::string task_id;
     int selected_participant_idx = 0;
     std::vector<std::string> participant_names_dropdown;
+    
+    std::string message_buffer = ""; // <-- NEW: Shows errors on screen
 
-    // --- Builder State ---
-    std::string b_name, b_stage_name, b_task_name, b_task_role;
-    bool b_is_parallel = false;
-    struct StageData { std::string name; bool parallel; std::vector<std::pair<std::string, std::string>> tasks; };
-    std::vector<StageData> b_stages;
-
-    // --- Helpers ---
     void logEvent(const std::string& msg);
     void updateParticipantDropdown();
+    void refreshAudit();
     ftxui::Component buildDashboardTab();
-    ftxui::Component buildBuilderTab();
     ftxui::Component buildInstancesTab();
     ftxui::Component buildTasksTab();
     ftxui::Component buildAuditTab();
 
-public:
-    TividyGUI(TividySystem& sys, ftxui::ScreenInteractive& scr);
-    
-    // Prevent copying (fixes the FTXUI ScreenInteractive copy error)
-    TividyGUI(const TividyGUI&) = delete;
-    TividyGUI& operator=(const TividyGUI&) = delete;
+    void runUniversityDemo();
+    void runInsuranceDemo();
+    std::vector<std::string> pendingTasks();
+    bool finished();
 
+public:
+    TividyGUI(TividySystem& sys, ftxui::ScreenInteractive& scr, const std::vector<std::string>& defs);
     ~TividyGUI();
     void run();
 };

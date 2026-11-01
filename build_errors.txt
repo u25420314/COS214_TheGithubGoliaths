@@ -1,0 +1,110 @@
+-- GLOB mismatch!
+The following files were added:
+  +C:/Users/svvog/Downloads/COS214_Project/COS214_TheGithubGoliaths/Task.cpp
+The following files were removed:
+  -C:/Users/svvog/Downloads/COS214_Project/COS214_TheGithubGoliaths/WorkflowTask.cpp
+-- ┌─ FTXUI options ─────────────────────
+-- │ FTXUI_ENABLE_INSTALL     : ON
+-- │ FTXUI_BUILD_EXAMPLES     : OFF
+-- │ FTXUI_QUIET              : OFF
+-- │ FTXUI_BUILD_DOCS         : OFF
+-- │ FTXUI_BUILD_TESTS        : OFF
+-- │ FTXUI_BUILD_TESTS_FUZZER : OFF
+-- │ FTXUI_ENABLE_COVERAGE    : OFF
+-- │ FTXUI_DEV_WARNINGS       : OFF
+-- │ FTXUI_CLANG_TIDY         : OFF
+-- └─────────────────────────────────────
+-- Configuring done (5.5s)
+-- Generating done (1.0s)
+-- Build files have been written to: C:/Users/svvog/Downloads/COS214_Project/COS214_TheGithubGoliaths/build
+[  5%] Built target screen
+[ 36%] Built target dom
+[ 37%] Building CXX object _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/screen_interactive.cpp.obj
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:80:52: error: 'WorkflowTask' was not declared in this scope
+   80 | void EventListener(std::atomic<bool>* quit, Sender<WorkflowTask> out) {
+      |                                                    ^~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:80:64: error: template argument 1 is invalid
+   80 | void EventListener(std::atomic<bool>* quit, Sender<WorkflowTask> out) {
+      |                                                                ^
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: In function 'void ftxui::{anonymous}::EventListener(std::atomic<bool>*, int)':
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:82:40: error: base operand of '->' is not a pointer
+   82 |   auto parser = TerminalInputParser(out->Clone());
+      |                                        ^~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:118:14: error: base operand of '->' is not a pointer
+  118 |           out->Send(Event::Special({0}));
+      |              ^~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: At global scope:
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:324:56: error: 'WorkflowTask' was not declared in this scope
+  324 | void AnimationListener(std::atomic<bool>* quit, Sender<WorkflowTask> out) {
+      |                                                        ^~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:324:68: error: template argument 1 is invalid
+  324 | void AnimationListener(std::atomic<bool>* quit, Sender<WorkflowTask> out) {
+      |                                                                    ^
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: In function 'void ftxui::{anonymous}::AnimationListener(std::atomic<bool>*, int)':
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:328:8: error: base operand of '->' is not a pointer
+  328 |     out->Send(AnimationTask());
+      |        ^~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: In constructor 'ftxui::ScreenInteractive::ScreenInteractive(int, int, ftxui::ScreenInteractive::Dimension, bool)':
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:342:33: error: 'WorkflowTask' was not declared in this scope
+  342 |   task_receiver_ = MakeReceiver<WorkflowTask>();
+      |                                 ^~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:342:47: error: no matching function for call to 'MakeReceiver<<expression error> >()'
+  342 |   task_receiver_ = MakeReceiver<WorkflowTask>();
+      |                                               ^
+In file included from C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:27:
+C:/Users/svvog/Downloads/COS214_Project/COS214_TheGithubGoliaths/build/_deps/ftxui-src/include/ftxui/component/receiver.hpp:134:13: note: candidate: 'template<class T> ftxui::Receiver<T> ftxui::MakeReceiver()'
+  134 | Receiver<T> MakeReceiver() {
+      |             ^~~~~~~~~~~~
+C:/Users/svvog/Downloads/COS214_Project/COS214_TheGithubGoliaths/build/_deps/ftxui-src/include/ftxui/component/receiver.hpp:134:13: note:   template argument deduction/substitution failed:
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:342:47: error: template argument 1 is invalid
+  342 |   task_receiver_ = MakeReceiver<WorkflowTask>();
+      |                                               ^
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: At global scope:
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:408:6: error: variable or field 'Post' declared void
+  408 | void ScreenInteractive::Post(WorkflowTask task) {
+      |      ^~~~~~~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:408:30: error: 'WorkflowTask' was not declared in this scope
+  408 | void ScreenInteractive::Post(WorkflowTask task) {
+      |                              ^~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: In member function 'void ftxui::ScreenInteractive::RunOnceBlocking(ftxui::Component)':
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:658:3: error: 'WorkflowTask' was not declared in this scope
+  658 |   WorkflowTask task;
+      |   ^~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:659:32: error: 'task' was not declared in this scope; did you mean 'Task'?
+  659 |   if (task_receiver_->Receive(&task)) {
+      |                                ^~~~
+      |                                Task
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: In member function 'void ftxui::ScreenInteractive::RunOnce(ftxui::Component)':
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:667:3: error: 'WorkflowTask' was not declared in this scope
+  667 |   WorkflowTask task;
+      |   ^~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:668:46: error: 'task' was not declared in this scope; did you mean 'Task'?
+  668 |   while (task_receiver_->ReceiveNonBlocking(&task)) {
+      |                                              ^~~~
+      |                                              Task
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp: At global scope:
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:676:57: error: 'WorkflowTask' has not been declared
+  676 | void ScreenInteractive::HandleTask(Component component, WorkflowTask& task) {
+      |                                                         ^~~~~~~~~~~~
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:676:6: error: no declaration matches 'void ftxui::ScreenInteractive::HandleTask(ftxui::Component, int&)'
+  676 | void ScreenInteractive::HandleTask(Component component, WorkflowTask& task) {
+      |      ^~~~~~~~~~~~~~~~~
+In file included from C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:28:
+C:/Users/svvog/Downloads/COS214_Project/COS214_TheGithubGoliaths/build/_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp:73:8: note: candidate is: 'void ftxui::ScreenInteractive::HandleTask(ftxui::Component, ftxui::Task&)'
+   73 |   void HandleTask(Component component, Task& task);
+      |        ^~~~~~~~~~
+C:/Users/svvog/Downloads/COS214_Project/COS214_TheGithubGoliaths/build/_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp:29:7: note: 'class ftxui::ScreenInteractive' defined here
+   29 | class ScreenInteractive : public Screen {
+      |       ^~~~~~~~~~~~~~~~~
+In file included from C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:15:
+C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/thread: In instantiation of 'std::thread::thread(_Callable&&, _Args&& ...) [with _Callable = void (*)(std::atomic<bool>*, int); _Args = {std::atomic<bool>*, std::unique_ptr<ftxui::SenderImpl<std::variant<ftxui::Event, std::function<void()>, ftxui::AnimationTask> >, std::default_delete<ftxui::SenderImpl<std::variant<ftxui::Event, std::function<void()>, ftxui::AnimationTask> > > >}; <template-parameter-1-3> = void]':
+C:\Users\svvog\Downloads\COS214_Project\COS214_TheGithubGoliaths\build\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp:641:71:   required from here
+C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/thread:136:44: error: static assertion failed: std::thread arguments must be invocable after conversion to rvalues
+  136 |           typename decay<_Args>::type...>::value,
+      |                                            ^~~~~
+_deps\ftxui-build\CMakeFiles\component.dir\build.make:366: recipe for target '_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/screen_interactive.cpp.obj' failed
+mingw32-make.exe[2]: *** [_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/screen_interactive.cpp.obj] Error 1
+CMakeFiles\Makefile2:321: recipe for target '_deps/ftxui-build/CMakeFiles/component.dir/all' failed
+mingw32-make.exe[1]: *** [_deps/ftxui-build/CMakeFiles/component.dir/all] Error 2
+Makefile:167: recipe for target 'all' failed
+mingw32-make.exe: *** [all] Error 2

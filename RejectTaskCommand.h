@@ -19,14 +19,15 @@ using namespace std;
  */
 class RejectTaskCommand : public Command {
     private:
-        Task* task; ///< The task to be rejected
+        //Redeclared to force Global Scope for Disambiguation
+        ::Task* task; ///< The task to be rejected
         TaskMemento* backup; ///< The backup in case of failure or undo
 
     public:
         /// @brief rejects the task
         /// @param e The engine to be used
         /// @param t The task that is being completed
-        RejectTaskCommand(WorkflowEngine* e, Task* t);
+        RejectTaskCommand(WorkflowEngine* e, ::Task* t);
 
         /// @brief Saves a memento and rejects the task
         void execute() override;

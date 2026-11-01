@@ -128,7 +128,6 @@ void Task::restore(const TaskMemento* m) {
         setState(m->getState()->clone());
     }
     assignee = m->getAssignee();
-    if(mediator) mediator->notify(this, "undone");
 }
 
 const std::string& Task::getRequiredRole() const {
