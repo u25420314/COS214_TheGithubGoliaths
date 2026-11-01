@@ -52,6 +52,8 @@ public:
     bool canStart() const override;
     Task* asTask() override { return this; }
 
+    void collectReady(std::vector<Task*>& out) override;
+
 protected:
 
     void doWork() override;

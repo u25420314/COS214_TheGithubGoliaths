@@ -5,7 +5,7 @@ using namespace std;
 CompleteTaskCommand::CompleteTaskCommand(WorkflowEngine* e, Task* t, Participant* p) : Command(e), task(t), participant(p), backup(nullptr) {}
 
 void CompleteTaskCommand::execute() {
-    if(task == nullptr || participant == nullptr) return;
+    if(task == nullptr) return;
     
     delete backup;
     backup = task->createMemento();

@@ -22,6 +22,7 @@ public:
     WorkNode* clone() const override;
     WorkNodeIterator* createIterator() override;
     bool isComplete() const override;
+    void collectReady(std::vector<Task*>& out) override;
 
 protected:
 

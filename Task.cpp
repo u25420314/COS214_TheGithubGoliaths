@@ -3,6 +3,9 @@
 #include "AvailableState.h"
 #include "TaskMemento.h"
 #include "DepthFirstIterator.h"
+#include "WorkflowMediator.h"
+#include "ApprovalHandler.h"
+#include "ApprovalRequest.h"
 
 //Constructor stores role, creates AvailableState as starting state and sets everything else to null
 Task::Task(const std::string& id, const std::string& name, const std::string& requiredRole) : WorkNode(id, name) {
@@ -51,13 +54,37 @@ void Task::setAssignee(Participant* p) {
 void Task::start() {
     if (state != nullptr) {
         state->start(this);
+        if(mediator) mediator->notify(this, "started");
     }
 }
 
 //forward to the current state, the state decides what happens
 void Task::complete() {
-    if (state != nullptr) {
-        state->complete(this);
+    if(state == nullptr) return;
+
+    if(approvalChain != nullptr) {
+        ApprovalRequest request(this, 0);
+        approvalChain->handle(request);
+
+        if(request.getDecision() == "Escalated") {
+            state->escalate(this);
+
+            if(mediator) mediator->notify(this, "escalated");
+            return;
+        }
+
+        if(request.getDecision() != "Approved") {
+            throw InvalidTransitionError("Complete needs approval: " + getName() + " still needs approval");
+        }
+    }
+
+    state->complete(this);
+    if(mediator) mediator->notify(this, "completed");
+}
+
+void Task::collectReady(std::vector<Task*>& out) {
+    if(state != nullptr && state->getName() == "Available") {
+        out.push_back(this);
     }
 }
 
@@ -65,6 +92,7 @@ void Task::complete() {
 void Task::reject() {
     if (state != nullptr) {
         state->reject(this);
+        if(mediator) mediator->notify(this, "rejected");
     }
 }
 
@@ -72,6 +100,7 @@ void Task::reject() {
 void Task::escalate() {
     if (state != nullptr) {
         state->escalate(this);
+        if(mediator) mediator->notify(this, "escalated");
     }
 }
 
@@ -79,6 +108,7 @@ void Task::escalate() {
 void Task::cancel() {
     if (state != nullptr) {
         state->cancel(this);
+        if(mediator) mediator->notify(this, "cancelled");
     }
 }
 
@@ -98,6 +128,7 @@ void Task::restore(const TaskMemento* m) {
         setState(m->getState()->clone());
     }
     assignee = m->getAssignee();
+    if(mediator) mediator->notify(this, "undone");
 }
 
 const std::string& Task::getRequiredRole() const {
