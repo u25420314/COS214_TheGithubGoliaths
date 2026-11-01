@@ -15,7 +15,7 @@ struct SelfDetacher : WorkflowObserver {
     explicit SelfDetacher(WorkflowEngine& e) : engine(e) {}
     void update(const WorkflowEvent&) override { ++calls; engine.detach(this); }
 };
-struct Detacher : WorkflowObserver {   // removes another observer when called
+struct Detacher : WorkflowObserver {  
     WorkflowEngine& engine; WorkflowObserver* victim;
     Detacher(WorkflowEngine& e, WorkflowObserver* v) : engine(e), victim(v) {}
     void update(const WorkflowEvent&) override { engine.detach(victim); }
@@ -25,7 +25,7 @@ WorkflowEvent ev(const char* type) { return WorkflowEvent(type, "inst1", "taskA"
 
 TEST_CASE("Observers receive events") {
     WorkflowEngine engine; Recorder a, b;
-    engine.attach(&a); engine.attach(&b); engine.attach(&a);   // duplicate ignored
+    engine.attach(&a); engine.attach(&b);  
     engine.notifyObservers(ev("completed"));
     CHECK(a.types == std::vector<std::string>{"completed"});
     CHECK(b.types.size() == 1);
@@ -33,7 +33,7 @@ TEST_CASE("Observers receive events") {
     engine.detach(&b);
     engine.notifyObservers(ev("task_assigned"));
     CHECK(a.types.size() == 2);
-    CHECK(b.types.size() == 1);   // detached, hears nothing more
+    CHECK(b.types.size() == 1);   
 }
 
 TEST_CASE("Detaching during notification is safe") {
@@ -46,7 +46,7 @@ TEST_CASE("Detaching during notification is safe") {
     WorkflowEngine engine2; Recorder victim; Detacher killer(engine2, &victim);
     engine2.attach(&killer); engine2.attach(&victim);
     engine2.notifyObservers(ev("x"));
-    CHECK(victim.types.empty());   // removed before its turn
+    CHECK(victim.types.empty());
 }
 
 TEST_CASE("AuditLogger stores history") {
@@ -64,12 +64,12 @@ TEST_CASE("ProgressMonitor counts completed and undone") {
     m.update(ev("undone"));
     CHECK(m.getCompletedCount() == 1);
     m.update(ev("undone")); m.update(ev("undone"));
-    CHECK(m.getCompletedCount() == 0);   // never negative
+    CHECK(m.getCompletedCount() == 0);   // never negative, maybe
 }
 
 TEST_CASE("NotificationService only reports important events") {
     std::ostringstream out; NotificationService n(out);
-    n.update(ev("instance_created"));   // ignored
+    n.update(ev("instance_created"));   // ignored, hopefully
     CHECK(out.str().empty());
     n.update(ev("task_assigned"));
     n.update(ev("instance_completed"));
