@@ -4,6 +4,10 @@
 #include "WorkflowObserver.h"
 
 /** Observer: stores a timestamped line for every event. The TUI reads it as the history. */
+/** 
+ * @class AuditLogger: concrete instance of WorkflowObserver, 
+ */
+
 class AuditLogger : public WorkflowObserver {
 public:
     void update(const WorkflowEvent& e) override;
