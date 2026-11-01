@@ -39,3 +39,7 @@ void TaskDecorator::collectReady(std::vector<Task*>& out) {
 void TaskDecorator::doWork() {
     if(wrapped != nullptr) wrapped->run();
 }
+
+void TaskDecorator::finish(){
+    
+}

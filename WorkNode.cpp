@@ -1,4 +1,6 @@
 #include "WorkNode.h"
+#include "WorkNode.h"
+#include "WorkflowMediator.h"
 
 //Composite: Component
 
@@ -56,4 +58,8 @@ bool WorkNode::canStart() const {
     return true;
 }
 
-void WorkNode::finish() {}
+void WorkNode::finish() {
+    if(mediator != nullptr){
+        mediator->notify(this, "completed");
+    }
+}

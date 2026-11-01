@@ -9,6 +9,7 @@ class DeadlineDecorator : public TaskDecorator {
     private:
         int dueDays;
         int elapsed;
+        bool late;
     public:
         DeadlineDecorator(WorkNode* wrapped, int dueDays);
 
@@ -16,6 +17,7 @@ class DeadlineDecorator : public TaskDecorator {
         int daysElapsed() const;
         int getDueDays() const;
         bool isOverdue() const;
+        bool completedLate() const;
 
         WorkNode* clone() const override;
 
