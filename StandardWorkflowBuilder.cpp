@@ -70,6 +70,7 @@ void StandardWorkflowBuilder::addTask(const std::string& name, const std::string
 
     openStages.back()->add(t);
     lastTask = t;
+    lastNode = t;
 }
 
 void StandardWorkflowBuilder::withApprovalChain(ApprovalHandler* chain) {
