@@ -1,4 +1,3 @@
-// Observer-side tests. They use the engine only as the Subject, so no workflow is needed.
 #include "doctest.h"
 #include <sstream>
 #include "AuditLogger.h"
