@@ -6,6 +6,7 @@
 #include <ftxui/dom/elements.hpp>
 #include <string>
 #include <vector>
+#include <set>
 #include "TividySystem.h"
 
 class TividyGUI {
@@ -33,7 +34,7 @@ private:
     int selected_participant_idx = 0;
     std::vector<std::string> participant_names_dropdown;
     
-    std::string message_buffer = ""; // <-- NEW: Shows errors on screen
+    std::string message_buffer = ""; 
 
     void logEvent(const std::string& msg);
     void updateParticipantDropdown();
@@ -45,8 +46,8 @@ private:
 
     void runUniversityDemo();
     void runInsuranceDemo();
-    std::vector<std::string> pendingTasks();
-    bool finished();
+    std::vector<std::string> pendingTasks(const std::string& instance_id, const std::set<std::string>& skip);
+    bool finished(const std::string& instance_id);
 
 public:
     TividyGUI(TividySystem& sys, ftxui::ScreenInteractive& scr, const std::vector<std::string>& defs);

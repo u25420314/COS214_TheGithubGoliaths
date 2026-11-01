@@ -298,6 +298,17 @@ Component TividyGUI::buildTasksTab() {
         catch (...) { message_buffer = "Error: Unknown exception on Complete"; }
     });
 
+    auto btn_start_complete = Button("Start & Complete", [&] {
+        if(task_id.empty()) return;
+        try {
+            system.startTask(task_id);
+            system.completeTask(task_id);
+            message_buffer = "Started & Completed " + task_id;
+            logEvent("Started & Completed Task " + task_id);
+        } catch (const std::exception& e) { message_buffer = std::string("Error: ") + e.what(); }
+        catch (...) { message_buffer = "Error: Unknown exception on Start&Complete"; }
+    });
+
     auto btn_reject = Button("Reject", [&] { 
         if(task_id.empty()) return;
         try { 
@@ -317,24 +328,24 @@ Component TividyGUI::buildTasksTab() {
         catch (...) { message_buffer = "Error: Unknown exception on Undo"; }
     });
 
-    auto action_row = Container::Horizontal(std::vector<Component>{ btn_start, btn_complete, btn_reject });
-    auto controls = Container::Vertical(std::vector<Component>{ in_task, action_row, dropdown, btn_assign, btn_undo });
+    auto action_row1 = Container::Horizontal(std::vector<Component>{ btn_start, btn_complete, btn_reject });
+    auto action_row2 = Container::Horizontal(std::vector<Component>{ btn_start_complete, btn_undo });
+    auto controls = Container::Vertical(std::vector<Component>{ in_task, action_row1, action_row2, dropdown, btn_assign });
 
-    return Renderer(controls, [in_task, action_row, dropdown, btn_assign, btn_undo, this] {
+    return Renderer(controls, [in_task, action_row1, action_row2, dropdown, btn_assign, this] {
         return vbox({
             text("Task Command Center") | bold | color(Color::Green),
             separator(),
             text("Enter Task ID:"),
             in_task->Render(),
-            action_row->Render(),
+            action_row1->Render(),
+            action_row2->Render(),
             separator(),
             text("Assign Task to Participant:"),
             dropdown->Render(),
             btn_assign->Render(),
             separator(),
-            btn_undo->Render(),
-            separator(),
-            text(message_buffer) | color(Color::Yellow) // <-- Shows error messages!
+            text(message_buffer) | color(Color::Yellow) 
         }) | flex;
     });
 }
@@ -353,13 +364,15 @@ Component TividyGUI::buildAuditTab() {
 }
 
 // ============================================================================
-// AUTO-RUN LOGIC
+// AUTO-RUN LOGIC (Now smart enough to skip already-completed tasks)
 // ============================================================================
-std::vector<std::string> TividyGUI::pendingTasks() {
+std::vector<std::string> TividyGUI::pendingTasks(const std::string& instance_id, const std::set<std::string>& skip) {
     std::set<std::string> done;
     std::vector<std::string> assigned;
     try {
         for (const std::string& line : system.getHistory()) {
+            if (!instance_id.empty() && line.find(instance_id) == std::string::npos) continue;
+
             if (line.find("task_assigned") != std::string::npos) {
                 size_t at = line.find("node ");
                 if (at != std::string::npos) {
@@ -378,14 +391,19 @@ std::vector<std::string> TividyGUI::pendingTasks() {
         }
     } catch(...) {}
     std::vector<std::string> pending;
-    for (const std::string& id : assigned) if (!done.count(id)) pending.push_back(id);
+    for (const std::string& id : assigned) {
+        if (!done.count(id) && !skip.count(id)) pending.push_back(id);
+    }
     return pending;
 }
 
-bool TividyGUI::finished() {
+bool TividyGUI::finished(const std::string& instance_id) {
     try {
-        for (const std::string& line : system.getHistory())
-            if (line.find("instance_completed") != std::string::npos) return true;
+        for (const std::string& line : system.getHistory()) {
+            if (line.find("instance_completed") != std::string::npos) {
+                if (instance_id.empty() || line.find(instance_id) != std::string::npos) return true;
+            }
+        }
     } catch(...) {}
     return false;
 }
@@ -398,21 +416,33 @@ void TividyGUI::runUniversityDemo() {
         data.set("name", "Goliath Junior");
         data.set("height", "3.1");
         std::string id = system.startWorkflow(available_definitions[0], data);
+        
         if (id != "Definition not found" && !id.empty()) {
             localInstanceIds.push_back(id);
             logEvent("Started Instance " + id);
             
-            std::vector<std::string> p = pendingTasks();
-            if (!p.empty() && !p[0].empty()) { try { system.completeTask(p[0]); logEvent("Attempted early complete (should fail)"); } catch(...) {} }
-            
-            for (int guard = 0; guard < 50 && !finished(); guard++) {
-                std::vector<std::string> pending = pendingTasks();
-                if (pending.empty() || pending[0].empty()) break;
-                try { system.startTask(pending[0]); } catch(...) {}
-                try { system.completeTask(pending[0]); } catch(...) {}
+            std::set<std::string> skipped;
+            for (int guard = 0; guard < 50 && !finished(id); guard++) {
+                std::vector<std::string> pending = pendingTasks(id, skipped);
+                if (pending.empty()) break;
+                std::string next_task = pending[0];
+
+                bool success = false;
+                try { system.startTask(next_task); success = true; } 
+                catch (const std::exception& e) { 
+                    if (std::string(e.what()).find("Completed") != std::string::npos) skipped.insert(next_task);
+                }
+                if (success) {
+                    try { system.completeTask(next_task); } 
+                    catch (const std::exception& e) {
+                        if (std::string(e.what()).find("Completed") != std::string::npos) skipped.insert(next_task);
+                    }
+                }
             }
             logEvent("FINISHED UNIVERSITY DEMO SCRIPT");
         }
+    } catch (const std::exception& e) { 
+        logEvent(std::string("CRASH CAUGHT IN UNIVERSITY DEMO: ") + e.what()); 
     } catch (...) { logEvent("CRASH CAUGHT IN UNIVERSITY DEMO"); }
 }
 
@@ -424,21 +454,40 @@ void TividyGUI::runInsuranceDemo() {
         data.set("name", "Sam Small");
         data.set("amount", "15000");
         std::string id = system.startWorkflow(available_definitions[1], data);
+        
         if (id != "Definition not found" && !id.empty()) {
             localInstanceIds.push_back(id);
             logEvent("Started Instance " + id);
 
+            std::set<std::string> skipped;
+            // Phase 1: Advance to n7
             for (int guard = 0; guard < 50; guard++) {
-                std::vector<std::string> pending = pendingTasks();
+                std::vector<std::string> pending = pendingTasks(id, skipped);
                 bool found_n7 = false;
                 for (const auto& pid : pending) if (pid == "n7") found_n7 = true;
                 if (found_n7) break;
-                if (pending.empty() || pending[0].empty()) break;
-                try { system.startTask(pending[0]); } catch(...) {}
-                try { system.completeTask(pending[0]); } catch(...) {}
+
+                if (pending.empty()) break;
+                std::string next_task = pending[0];
+
+                logEvent("Loop " + std::to_string(guard) + " on " + next_task);
+                bool success = false;
+                try { system.startTask(next_task); success = true; } 
+                catch (const std::exception& e) { 
+                    if (std::string(e.what()).find("Completed") != std::string::npos) skipped.insert(next_task);
+                    else logEvent("  startTask THREW: " + std::string(e.what()));
+                }
+                if (success) {
+                    try { system.completeTask(next_task); } 
+                    catch (const std::exception& e) { 
+                        if (std::string(e.what()).find("Completed") != std::string::npos) skipped.insert(next_task);
+                        else logEvent("  completeTask THREW: " + std::string(e.what()));
+                    }
+                }
             }
 
-            std::vector<std::string> pending_now = pendingTasks();
+            // Phase 2: n7 reject test
+            std::vector<std::string> pending_now = pendingTasks(id, skipped);
             bool n7_exists = false;
             for (const auto& p : pending_now) if (p == "n7") n7_exists = true;
             
@@ -447,15 +496,35 @@ void TividyGUI::runInsuranceDemo() {
                 try { system.startTask("n7"); } catch(...) {}
                 try { system.rejectTask("n7"); } catch(...) {}
                 try { system.completeTask("n7"); } catch(...) {}
+            } else {
+                logEvent("n7 never assigned. Pending: ");
+                for (const auto& p : pending_now) logEvent("  pending: " + p);
             }
 
-            for (int guard = 0; guard < 50 && !finished(); guard++) {
-                std::vector<std::string> pending = pendingTasks();
-                if (pending.empty() || pending[0].empty()) break;
-                try { system.startTask(pending[0]); } catch(...) {}
-                try { system.completeTask(pending[0]); } catch(...) {}
+            // Phase 3: Finish up
+            for (int guard = 0; guard < 50 && !finished(id); guard++) {
+                std::vector<std::string> pending = pendingTasks(id, skipped);
+                if (pending.empty()) break;
+                std::string next_task = pending[0];
+
+                logEvent("Final loop " + std::to_string(guard) + " on " + next_task);
+                bool success = false;
+                try { system.startTask(next_task); success = true; } 
+                catch (const std::exception& e) { 
+                    if (std::string(e.what()).find("Completed") != std::string::npos) skipped.insert(next_task);
+                }
+                if (success) {
+                    try { system.completeTask(next_task); } 
+                    catch (const std::exception& e) {
+                        if (std::string(e.what()).find("Completed") != std::string::npos) skipped.insert(next_task);
+                    }
+                }
             }
-            logEvent("FINISHED INSURANCE DEMO SCRIPT");
+            logEvent("FINISHED INSURANCE DEMO SCRIPT (finished flag=" + std::to_string(finished(id)) + ")");
         }
-    } catch (...) { logEvent("CRASH CAUGHT IN INSURANCE DEMO"); }
+    } catch (const std::exception& e) { 
+        logEvent(std::string("CRASH CAUGHT IN INSURANCE DEMO: ") + e.what()); 
+    } catch (...) { 
+        logEvent("CRASH CAUGHT IN INSURANCE DEMO"); 
+    }
 }
