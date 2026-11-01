@@ -1,56 +1,33 @@
-#pragma once
+#ifndef GUI_H
+#define GUI_H
 
-#include <memory>
 #include <string>
 #include <vector>
 
-#include "ftxui/component/component.hpp"
-#include "ftxui/component/captured_mouse.hpp"
-#include <ftxui/component/screen_interactive.hpp>
-#include <ftxui/dom/elements.hpp>
+// A very basic console UI namespace.
+namespace ConsoleGUI {
 
-#include "TividySystem.h"
+    // Clears the terminal screen.
+    void clearScreen();
 
-// NOTE: no "using namespace ftxui;" in a header. Put it in gui.cpp instead.
+    // Prints a simple horizontal line.
+    void printSeparator(int width = 40, char symbol = '-');
 
-class TividyGUI {
-public:
-    explicit TividyGUI(TividySystem& system);
-    ~TividyGUI();
+    // Prints a centred title.
+    void printTitle(const std::string& title, int width = 40);
 
-    void run();
+    // Displays a menu and returns the user's choice (1-based index).
+    // Returns 0 if the user chooses to exit.
+    int showMenu(const std::string& title, const std::vector<std::string>& options);
 
-private:
-    // TODO: state (current view, selected indices, message buffer, ...)
-    // TODO: views (industry select, work list, task actions, progress, history, ...)
- 
-    // ---- rendering: one per view ----
-    ftxui::Element render();
-    ftxui::Element renderIndustrySelect();
-    ftxui::Element renderStartInstance();
-    ftxui::Element renderWorkList();
-    ftxui::Element renderTaskActions();
-    ftxui::Element renderProgress();
-    ftxui::Element renderHistory();
+    // Pauses execution until Enter is pressed.
+    void waitForEnter();
 
-    // ---- input: one per view ----
-    bool handleInput(ftxui::Event event);
-    bool handleIndustryInput(ftxui::Event event);
-    bool handleStartInstanceInput(ftxui::Event event);
-    bool handleWorkListInput(ftxui::Event event);
-    bool handleTaskActionsInput(ftxui::Event event);
-    bool handleProgressInput(ftxui::Event event);
-    bool handleHistoryInput(ftxui::Event event);
+    // Prints an error message to the console.
+    void printError(const std::string& message);
 
-    // ---- actions: these are the only functions that talk to TividySystem ----
-    void startSelectedWorkflow();
-    void assignSelectedTask();
-    void completeSelectedTask();   // needs a facade method that doesn't exist yet
-    void approveSelectedTask();    // needs a facade method that doesn't exist yet
-    void rejectSelectedTask();     // needs a facade method that doesn't exist yet
-    void undoLastAction();
+    // Prints a success message to the console.
+    void printSuccess(const std::string& message);
+}
 
-    // ---- data loading ----
-    void loadAvailableTasks();     // needs a facade method that doesn't exist yet
-    void loadHistory();            // needs a facade method that doesn't exist yet
-};
+#endif // GUI_H
