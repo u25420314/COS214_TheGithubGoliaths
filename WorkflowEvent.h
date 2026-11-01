@@ -30,21 +30,25 @@ public:
     
     /**
      * @brief Getter for type 
+     * @return String Type
      */
     const std::string& getType() const { return type; }
     
     /**
      * @brief Getter for the instanceId
+     * @return String instanceId
      */
     const std::string& getInstanceId() const { return instanceId; }
     
     /**
      * @brief Getter for the NodeId
+     * @return String NodeId
      */
     const std::string& getNodeId() const { return nodeId; }
     
     /**
      * @brief Getter for the time
+     * @return String time
      */
     const std::string& getTime() const { return time; }
 

@@ -22,6 +22,7 @@ public:
     
     /**
      * @brief Returns the entries of all the timestamped WorkflowEvents as formatted strings
+     * @return Vector of all entries, formatted
      */
     const std::vector<std::string>& getEntries() const { return entries; }
 

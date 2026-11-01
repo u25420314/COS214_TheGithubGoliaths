@@ -1,5 +1,6 @@
 #include "WorkflowEngine.h"
 #include <algorithm>
+#include <vector>
 #include "AssignmentStrategy.h"
 #include "AvailableState.h"
 #include "Task.h"
@@ -90,6 +91,13 @@ void WorkflowEngine::assign(Task* task) {
 
 void WorkflowEngine::detach(WorkflowObserver* o) {
     observers.erase(std::remove(observers.begin(), observers.end(), o), observers.end());
+}
+
+void WorkflowEngine::attach(WorkflowObserver* o){
+    auto it = std::find(observers.begin(), observers.end(), o);
+    if(it == observers.end()){
+        observers.emplace_back(o);
+    }
 }
 
 void WorkflowEngine::notifyObservers(const WorkflowEvent& e) {

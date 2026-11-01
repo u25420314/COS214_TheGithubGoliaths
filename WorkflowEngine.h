@@ -13,8 +13,7 @@ class WorkflowDefinition;
 class WorkflowInstance;
 
 /**
- * The Mediator (receives notify() from tasks and decides what happens next) and
- * the Subject of the Observer pattern (publishes events to attached observers).
+ * The Mediator (receives notify() from tasks) and Subject of Observer pattern (publishes events to attached observers)
  *
  * NOTE: WorkNode, Task and WorkflowInstance must declare "friend class WorkflowEngine;"
  * so the engine can read the private fields shown in the class diagram.
