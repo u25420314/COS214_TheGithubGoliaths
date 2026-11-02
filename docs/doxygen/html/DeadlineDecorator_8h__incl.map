@@ -1,0 +1,14 @@
+<map id="DeadlineDecorator.h" name="DeadlineDecorator.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="78,5,233,31"/>
+<area shape="rect" id="Node000002" href="$TaskDecorator_8h.html" title=" " alt="" coords="92,79,219,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,31,158,65,153,65,153,31"/>
+<area shape="rect" id="Node000003" href="$WorkNode_8h.html" title="Defines the WorkNode abstract base class for the Composite pattern." alt="" coords="181,152,282,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="169,102,211,141,207,144,166,106"/>
+<area shape="rect" id="Node000006" href="$WorkflowMediator_8h.html" title=" " alt="" coords="5,152,156,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="145,106,105,144,101,141,142,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,225,143,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,180,146,220,144,216,211,175"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="200,225,263,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="234,178,234,212,229,212,229,178"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="89,177,105,212,100,214,84,179"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="CancelledState.h" name="CancelledState.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="31,5,163,31"/>
+<area shape="rect" id="Node000002" href="$TaskState_8h.html" title="Abstract state in the state pattern for a Task&#39;s lifecycle, plus the exception." alt="" coords="48,79,145,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,31,99,65,94,65,94,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,92,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,106,66,142,62,139,87,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="117,152,175,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="107,103,132,139,128,142,103,106"/>
+</map>

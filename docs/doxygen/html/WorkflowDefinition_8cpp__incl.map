@@ -1,0 +1,20 @@
+<map id="WorkflowDefinition.cpp" name="WorkflowDefinition.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="198,5,370,31"/>
+<area shape="rect" id="Node000002" href="$WorkflowDefinition_8h.html" title=" " alt="" coords="205,152,363,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="287,31,287,138,281,138,281,31"/>
+<area shape="rect" id="Node000004" href="$WorkflowInstance_8h.html" title=" " alt="" coords="93,79,243,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,33,200,74,197,69,264,28"/>
+<area shape="rect" id="Node000007" href="$WorkNode_8h.html" title="Defines the WorkNode abstract base class for the Composite pattern." alt="" coords="349,79,451,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="304,28,371,69,368,74,301,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="196,225,255,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,179,245,217,241,213,272,176"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="173,104,196,176,214,212,209,215,191,178,168,105"/>
+<area shape="rect" id="Node000005" href="$WorkflowData_8h.html" title=" " alt="" coords="5,152,131,177"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="153,106,97,146,94,142,150,102"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="94,175,188,217,186,222,92,180"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="43,225,93,251"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="71,178,71,212,65,212,65,178"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="402,104,396,140,389,161,377,179,353,199,325,215,269,233,268,227,323,210,350,195,373,176,384,158,391,139,397,104"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="438,152,501,177"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="413,102,451,140,447,144,410,106"/>
+</map>

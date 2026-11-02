@@ -1,0 +1,16 @@
+<map id="RejectTaskCommand.h" name="RejectTaskCommand.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="103,5,273,31"/>
+<area shape="rect" id="Node000002" href="$RejectTaskCommand_8cpp.html" title=" " alt="" coords="5,79,192,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,41,115,81,112,76,161,37"/>
+<area shape="rect" id="Node000003" href="$TividySystem_8h.html" title=" " alt="" coords="216,79,339,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,37,264,76,261,81,211,41"/>
+<area shape="rect" id="Node000004" href="$TividySystem_8cpp.html" title=" " alt="" coords="87,152,225,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,113,177,154,175,149,244,109"/>
+<area shape="rect" id="Node000005" href="$gui_8h.html" title="Defines the TividyGUI class, which provides the FTXUI&#45;based frontend for the Tividy Workflow System." alt="" coords="250,152,305,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="280,118,280,152,275,152,275,118"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html" title=" " alt="" coords="301,225,384,251"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="297,114,320,151,335,191,343,225,338,226,329,193,315,153,293,117"/>
+<area shape="rect" id="Node000006" href="$gui_8cpp.html" title=" " alt="" coords="208,225,277,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="268,191,251,226,246,224,263,189"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="299,186,334,223,330,227,295,189"/>
+</map>

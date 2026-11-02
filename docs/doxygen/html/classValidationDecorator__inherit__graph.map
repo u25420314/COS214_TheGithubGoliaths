@@ -1,0 +1,7 @@
+<map id="ValidationDecorator" name="ValidationDecorator">
+<area shape="rect" id="Node000001" title="class for ValidationDecorator" alt="" coords="5,712,173,877"/>
+<area shape="rect" id="Node000002" href="$classTaskDecorator.html" title="The abstract decorator for a WorkNode." alt="" coords="18,399,161,664"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,678,92,712,87,712,87,678"/>
+<area shape="rect" id="Node000003" href="$classWorkNode.html" title="abstract Component class in Composite" alt="" coords="25,5,153,351"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,365,92,399,87,399,87,365"/>
+</map>

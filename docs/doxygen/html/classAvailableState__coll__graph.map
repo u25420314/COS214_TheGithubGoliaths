@@ -1,0 +1,5 @@
+<map id="AvailableState" name="AvailableState">
+<area shape="rect" id="Node000001" title="Class representing the available state of a task." alt="" coords="8,339,116,464"/>
+<area shape="rect" id="Node000002" href="$classTaskState.html" title=" " alt="" coords="5,5,119,291"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,304,65,338,59,338,59,304"/>
+</map>

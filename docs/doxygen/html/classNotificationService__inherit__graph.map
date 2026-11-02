@@ -1,0 +1,5 @@
+<map id="NotificationService" name="NotificationService">
+<area shape="rect" id="Node000001" title="Observer that prints notifications for important events relevant to the User." alt="" coords="9,139,171,224"/>
+<area shape="rect" id="Node000002" href="$classWorkflowObserver.html" title="Abstract &lt;&lt;Interface&gt;&gt; for anything that wants to be notified about workflow events." alt="" coords="5,5,175,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,104,93,138,87,138,87,104"/>
+</map>

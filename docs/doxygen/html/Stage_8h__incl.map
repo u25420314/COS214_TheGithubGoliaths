@@ -1,0 +1,11 @@
+<map id="Stage.h" name="Stage.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="43,5,114,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,152,64,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,33,38,53,18,80,15,94,16,110,24,139,19,140,10,110,10,94,14,78,34,49,58,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="90,152,153,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,29,124,49,144,78,148,94,147,111,137,140,132,139,142,110,142,94,139,80,120,53,96,33"/>
+<area shape="rect" id="Node000004" href="$WorkNode_8h.html" title="Defines the WorkNode abstract base class for the Composite pattern." alt="" coords="28,79,129,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="81,31,81,65,76,65,76,31"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="74,106,51,142,47,139,69,103"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="88,103,110,139,105,142,83,106"/>
+</map>

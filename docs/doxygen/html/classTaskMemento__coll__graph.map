@@ -1,0 +1,7 @@
+<map id="TaskMemento" name="TaskMemento">
+<area shape="rect" id="Node000001" title="Stores the internal state of a task for recovery later on." alt="" coords="74,353,215,479"/>
+<area shape="rect" id="Node000002" href="$classTaskState.html" title=" " alt="" coords="5,5,119,291"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,290,123,337,118,338,104,292"/>
+<area shape="rect" id="Node000003" href="$classParticipant.html" title=" " alt="" coords="143,15,312,281"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,282,171,339,166,337,184,280"/>
+</map>

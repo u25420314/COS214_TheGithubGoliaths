@@ -1,0 +1,5 @@
+<map id="RejectTaskCommand" name="RejectTaskCommand">
+<area shape="rect" id="Node000001" title="Completes a task." alt="" coords="5,179,192,324"/>
+<area shape="rect" id="Node000002" href="$classCommand.html" title="Base case for every action in the workflow system." alt="" coords="40,5,157,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,145,101,179,96,179,96,145"/>
+</map>

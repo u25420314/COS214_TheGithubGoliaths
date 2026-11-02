@@ -1,0 +1,9 @@
+<map id="DepthFirstIterator" name="DepthFirstIterator">
+<area shape="rect" id="Node000001" title="Class representing a depth&#45;first iterator for traversing work nodes." alt="" coords="65,541,218,687"/>
+<area shape="rect" id="Node000002" href="$classWorkNodeIterator.html" title=" " alt="" coords="5,243,171,389"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,402,131,541,126,542,101,403"/>
+<area shape="rect" id="Node000003" href="$classWorkNode.html" title="abstract Component class in Composite" alt="" coords="195,153,323,479"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,480,178,527,173,525,192,478"/>
+<area shape="rect" id="Node000004" href="$classWorkflowMediator.html" title=" " alt="" coords="175,5,343,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="261,91,261,137,256,137,256,91"/>
+</map>

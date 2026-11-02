@@ -1,0 +1,23 @@
+<map id="TaskMemento.cpp" name="TaskMemento.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="20,5,160,31"/>
+<area shape="rect" id="Node000002" href="$TaskMemento_8h.html" title=" " alt="" coords="128,79,253,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,29,165,68,161,73,105,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="156,225,214,251"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="79,33,52,60,24,97,14,117,9,137,10,157,18,176,37,190,69,204,143,225,142,230,67,209,34,195,14,179,4,158,4,137,9,115,20,94,48,56,75,29"/>
+<area shape="rect" id="Node000003" href="$WorkflowData_8h.html" title=" " alt="" coords="28,152,153,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="176,106,119,146,116,142,173,102"/>
+<area shape="poly" id="edge11_Node000002_Node000005" title=" " alt="" coords="193,105,189,212,183,212,187,104"/>
+<area shape="rect" id="Node000006" href="$TaskState_8h.html" title="Abstract state in the state pattern for a Task&#39;s lifecycle, plus the exception." alt="" coords="228,152,326,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="206,102,254,141,251,145,203,106"/>
+<area shape="rect" id="Node000008" href="$Participant_8h.html" title=" " alt="" coords="350,152,452,177"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="225,101,355,145,353,150,223,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="65,225,116,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="93,178,93,212,88,212,88,178"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="107,175,160,215,157,219,104,179"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="264,179,212,219,209,215,261,175"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="239,225,326,251"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="281,177,283,212,278,212,275,178"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="367,180,229,225,227,220,366,175"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="370,225,432,251"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="404,178,404,212,398,212,398,178"/>
+</map>

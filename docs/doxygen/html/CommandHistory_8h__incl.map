@@ -1,0 +1,27 @@
+<map id="CommandHistory.h" name="CommandHistory.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="221,5,368,31"/>
+<area shape="rect" id="Node000002" href="$Command_8h.html" title=" " alt="" coords="244,79,345,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="297,31,297,65,292,65,292,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="217,372,276,397"/>
+<area shape="poly" id="edge15_Node000001_Node000005" title=" " alt="" coords="222,27,152,40,116,50,82,64,53,82,29,104,14,131,8,164,8,239,14,270,29,296,51,318,80,336,144,361,204,375,203,380,143,366,77,340,48,322,24,299,9,272,3,240,3,163,9,129,25,101,49,78,80,59,114,45,151,35,221,22"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="562,299,625,324"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="330,28,391,54,466,94,504,120,539,151,570,185,596,224,604,255,602,285,597,285,598,256,591,226,566,189,535,155,500,125,463,99,389,58,328,33"/>
+<area shape="rect" id="Node000003" href="$WorkflowEngine_8h.html" title=" " alt="" coords="225,152,364,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="297,104,297,138,292,138,292,104"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="43,225,120,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="261,180,130,223,128,218,260,175"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="277,180,249,199,216,226,185,260,161,299,160,319,169,336,186,351,207,363,204,368,183,355,165,339,154,320,156,298,180,257,212,223,245,195,274,175"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="365,170,483,190,535,205,570,223,581,237,588,253,595,284,590,285,583,254,576,240,566,227,533,209,481,195,364,176"/>
+<area shape="rect" id="Node000007" href="$WorkflowMediator_8h.html" title=" " alt="" coords="171,299,322,324"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="290,179,267,226,253,286,247,284,261,224,285,176"/>
+<area shape="rect" id="Node000008" href="$WorkflowObserver_8h.html" title=" " alt="" coords="276,225,428,251"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="306,176,336,213,332,216,302,179"/>
+<area shape="rect" id="Node000010" href="$Participant_8h.html" title=" " alt="" coords="453,225,555,251"/>
+<area shape="poly" id="edge11_Node000003_Node000010" title=" " alt="" coords="329,175,458,218,456,223,327,180"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="249,324,249,358,244,358,244,324"/>
+<area shape="rect" id="Node000009" href="$WorkflowEvent_8h.html" title=" " alt="" coords="347,299,477,324"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="364,249,396,286,391,290,360,253"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="386,326,287,369,285,364,384,322"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="508,251,508,287,502,308,491,326,477,337,456,346,403,362,290,381,289,376,402,356,455,341,474,332,487,322,498,306,503,286,503,251"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="520,249,570,288,566,292,517,253"/>
+</map>

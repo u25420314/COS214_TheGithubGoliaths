@@ -1,0 +1,5 @@
+<map id="WorkflowEngine" name="WorkflowEngine">
+<area shape="rect" id="Node000001" title="Mediator and Subject of workflow system." alt="" coords="7,139,172,484"/>
+<area shape="rect" id="Node000002" href="$classWorkflowMediator.html" title=" " alt="" coords="5,5,173,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,105,92,138,87,138,87,105"/>
+</map>

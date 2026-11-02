@@ -1,0 +1,29 @@
+<map id="AvailableState.cpp" name="AvailableState.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="303,5,446,31"/>
+<area shape="rect" id="Node000002" href="$AvailableState_8h.html" title=" " alt="" coords="5,79,133,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="326,33,133,78,131,73,325,28"/>
+<area shape="rect" id="Node000006" href="$AssignedState_8h.html" title=" " alt="" coords="158,79,285,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="351,33,260,75,258,70,349,28"/>
+<area shape="rect" id="Node000007" href="$CancelledState_8h.html" title=" " alt="" coords="309,79,441,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="377,31,377,65,372,65,372,31"/>
+<area shape="rect" id="Node000008" href="$Task_8h.html" title=" " alt="" coords="465,79,527,104"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="396,28,466,69,463,74,393,33"/>
+<area shape="rect" id="Node000011" href="$Participant_8h.html" title=" " alt="" coords="557,152,659,177"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="428,28,484,47,540,76,572,107,596,138,592,142,568,110,537,81,482,52,427,33"/>
+<area shape="rect" id="Node000003" href="$TaskState_8h.html" title="Abstract state in the state pattern for a Task&#39;s lifecycle, plus the exception." alt="" coords="234,152,331,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,101,236,145,234,150,103,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="239,225,326,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="285,178,285,212,280,212,280,178"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="389,225,448,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="306,175,386,217,383,221,303,180"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="233,103,266,140,262,143,229,106"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="362,106,310,146,307,141,358,102"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="473,106,444,126,431,138,421,153,414,183,416,212,410,212,409,182,416,151,427,135,440,121,470,102"/>
+<area shape="rect" id="Node000009" href="$WorkNode_8h.html" title="Defines the WorkNode abstract base class for the Composite pattern." alt="" coords="431,152,532,177"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="496,105,489,139,484,138,491,104"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="473,179,440,217,436,213,469,176"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="513,225,575,251"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="494,176,527,213,523,217,490,179"/>
+<area shape="poly" id="edge15_Node000011_Node000005" title=" " alt="" coords="579,180,462,223,460,218,577,175"/>
+<area shape="poly" id="edge16_Node000011_Node000010" title=" " alt="" coords="599,179,565,217,561,213,595,176"/>
+</map>

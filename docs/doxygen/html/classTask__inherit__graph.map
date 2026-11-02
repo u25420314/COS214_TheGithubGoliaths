@@ -1,0 +1,5 @@
+<map id="Task" name="Task">
+<area shape="rect" id="Node000001" title="The class of the task used in the composite." alt="" coords="8,399,131,784"/>
+<area shape="rect" id="Node000002" href="$classWorkNode.html" title="abstract Component class in Composite" alt="" coords="5,5,133,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,365,72,398,67,398,67,365"/>
+</map>

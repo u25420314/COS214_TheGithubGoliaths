@@ -1,0 +1,11 @@
+<map id="AssignmentStrategy.h" name="AssignmentStrategy.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="12,152,75,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,33,45,53,26,80,22,94,23,110,32,139,27,140,18,110,17,94,21,78,41,49,67,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,152,159,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,29,133,49,154,78,158,94,157,111,146,141,141,139,151,110,152,94,149,80,129,53,105,33"/>
+<area shape="rect" id="Node000004" href="$Participant_8h.html" title=" " alt="" coords="36,79,139,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="90,31,90,65,85,65,85,31"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="82,106,60,142,55,139,78,103"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="97,103,118,139,114,142,92,106"/>
+</map>

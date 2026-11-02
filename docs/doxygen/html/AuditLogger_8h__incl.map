@@ -1,0 +1,12 @@
+<map id="AuditLogger.h" name="AuditLogger.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="13,225,71,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,32,33,53,19,80,13,115,16,151,24,184,34,212,29,214,19,186,11,152,8,114,14,78,29,50,47,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="29,79,92,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="63,31,63,65,58,65,58,31"/>
+<area shape="rect" id="Node000004" href="$WorkflowObserver_8h.html" title=" " alt="" coords="117,79,269,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="83,28,160,70,158,74,81,33"/>
+<area shape="rect" id="Node000005" href="$WorkflowEvent_8h.html" title=" " alt="" coords="78,152,209,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="187,106,161,142,157,139,182,103"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="129,180,71,219,68,215,126,175"/>
+</map>
