@@ -69,3 +69,10 @@ cmake --build build
 ./build/tividy
 
 ./build/tests/tividy_tests
+
+----------------------------------------------------------------------------------------------------
+
+Running the docker
+
+docker build -t tividy .
+docker run -it --rm tividy
