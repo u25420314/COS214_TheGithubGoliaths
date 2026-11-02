@@ -1,0 +1,23 @@
+<map id="Command.h" name="Command.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="239,5,340,31"/>
+<area shape="rect" id="Node000002" href="$WorkflowEngine_8h.html" title=" " alt="" coords="220,79,359,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="292,31,292,65,287,65,287,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,83,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="251,107,97,151,95,146,249,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="329,299,388,324"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="360,100,444,120,480,134,502,150,512,172,511,193,501,214,485,234,442,268,397,295,394,290,439,264,482,230,497,211,506,192,507,173,498,154,477,138,443,125,358,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="354,225,417,251"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="299,103,372,212,368,215,295,106"/>
+<area shape="rect" id="Node000006" href="$WorkflowMediator_8h.html" title=" " alt="" coords="23,225,174,251"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="241,107,193,125,169,138,147,154,124,183,109,214,104,211,120,180,143,150,166,133,190,120,239,102"/>
+<area shape="rect" id="Node000007" href="$WorkflowObserver_8h.html" title=" " alt="" coords="157,152,309,177"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="282,106,253,143,249,140,278,103"/>
+<area shape="rect" id="Node000009" href="$Participant_8h.html" title=" " alt="" coords="385,152,487,177"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="314,102,401,144,399,148,312,106"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="141,248,316,296,315,301,140,253"/>
+<area shape="rect" id="Node000008" href="$WorkflowEvent_8h.html" title=" " alt="" coords="199,225,329,251"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="241,177,256,212,251,214,236,179"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="281,249,334,288,331,292,278,253"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="440,178,442,212,439,232,432,252,414,275,393,293,390,289,411,271,427,249,433,231,436,212,435,178"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="430,179,404,216,399,213,425,176"/>
+</map>

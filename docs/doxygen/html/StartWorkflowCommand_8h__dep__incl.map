@@ -1,0 +1,16 @@
+<map id="StartWorkflowCommand.h" name="StartWorkflowCommand.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="107,5,299,31"/>
+<area shape="rect" id="Node000002" href="$StartWorkflowCommand_8cpp.html" title=" " alt="" coords="5,79,212,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,41,126,81,123,76,176,37"/>
+<area shape="rect" id="Node000003" href="$TividySystem_8h.html" title=" " alt="" coords="237,79,359,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,37,284,76,281,81,228,41"/>
+<area shape="rect" id="Node000004" href="$TividySystem_8cpp.html" title=" " alt="" coords="107,152,246,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="268,113,198,154,195,149,265,109"/>
+<area shape="rect" id="Node000005" href="$gui_8h.html" title="Defines the TividyGUI class, which provides the FTXUI&#45;based frontend for the Tividy Workflow System." alt="" coords="271,152,325,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="301,118,301,152,295,152,295,118"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html" title=" " alt="" coords="322,225,405,251"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="318,114,340,151,355,191,364,225,358,226,350,193,336,153,313,117"/>
+<area shape="rect" id="Node000006" href="$gui_8cpp.html" title=" " alt="" coords="229,225,298,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="289,191,271,226,267,224,284,189"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="320,186,355,223,351,227,316,189"/>
+</map>

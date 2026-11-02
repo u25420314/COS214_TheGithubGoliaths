@@ -1,0 +1,11 @@
+<map id="TaskDecorator" name="TaskDecorator">
+<area shape="rect" id="Node000001" title="The abstract decorator for a WorkNode." alt="" coords="195,399,337,664"/>
+<area shape="rect" id="Node000003" href="$classDeadlineDecorator.html" title="Class representing a deadline decorator for a task." alt="" coords="5,712,167,957"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,665,161,713,156,710,185,662"/>
+<area shape="rect" id="Node000004" href="$classPriorityDecorator.html" title="Class representing a priority decorator for a task." alt="" coords="191,762,341,907"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,678,269,762,263,762,263,678"/>
+<area shape="rect" id="Node000005" href="$classValidationDecorator.html" title="class for ValidationDecorator" alt="" coords="365,752,533,917"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="347,660,401,750,397,753,342,663"/>
+<area shape="rect" id="Node000002" href="$classWorkNode.html" title="abstract Component class in Composite" alt="" coords="202,5,330,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,365,269,399,263,399,263,365"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="AuditLogger" name="AuditLogger">
+<area shape="rect" id="Node000001" title="AuditLogger: concrete instance of WorkflowObserver, stores a timestamped line for each event,..." alt="" coords="37,139,143,224"/>
+<area shape="rect" id="Node000002" href="$classWorkflowObserver.html" title="Abstract &lt;&lt;Interface&gt;&gt; for anything that wants to be notified about workflow events." alt="" coords="5,5,175,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,104,93,138,87,138,87,104"/>
+</map>

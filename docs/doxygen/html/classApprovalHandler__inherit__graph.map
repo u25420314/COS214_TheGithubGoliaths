@@ -1,0 +1,7 @@
+<map id="ApprovalHandler" name="ApprovalHandler">
+<area shape="rect" id="Node000001" title="Abstract hander in the chain of respsonsibility design pattern." alt="" coords="85,5,244,131"/>
+<area shape="rect" id="Node000002" href="$classRoleApprover.html" title="Approves requests based on participant roles." alt="" coords="5,179,132,264"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,144,97,180,93,177,116,141"/>
+<area shape="rect" id="Node000003" href="$classTimeoutEscalationHandler.html" title="Escalates approval requests that exceed a waiting time limit." alt="" coords="157,179,367,264"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,141,237,177,233,180,210,144"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="RoleApprover" name="RoleApprover">
+<area shape="rect" id="Node000001" title="Approves requests based on participant roles." alt="" coords="21,180,148,265"/>
+<area shape="rect" id="Node000002" href="$classApprovalHandler.html" title="Abstract hander in the chain of respsonsibility design pattern." alt="" coords="5,5,164,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,144,87,180,82,180,82,144"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="165,50,183,56,191,68,182,80,178,77,185,68,180,60,164,56"/>
+</map>

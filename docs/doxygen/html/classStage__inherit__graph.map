@@ -1,0 +1,5 @@
+<map id="Stage" name="Stage">
+<area shape="rect" id="Node000001" title="Class representing a stage in a workflow, which can contain multiple child work nodes." alt="" coords="5,399,160,744"/>
+<area shape="rect" id="Node000002" href="$classWorkNode.html" title="abstract Component class in Composite" alt="" coords="19,5,147,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,364,85,398,80,398,80,364"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classApprovalHandler.html" title="Abstract hander in the chain of respsonsibility design pattern." alt="" coords="5,31,136,56"/>
+<area shape="rect" id="Node000001" href="$classRoleApprover.html" title="Approves requests based on participant roles." alt="" coords="226,5,337,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="149,31,226,22,226,27,150,37"/>
+<area shape="rect" id="Node000002" href="$classTimeoutEscalationHandler.html" title="Escalates approval requests that exceed a waiting time limit." alt="" coords="184,55,379,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="150,50,184,54,184,59,149,55"/>
+</map>

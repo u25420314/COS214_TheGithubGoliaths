@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classTaskState.html" title=" " alt="" coords="5,153,91,179"/>
+<area shape="rect" id="Node000001" href="$classAssignedState.html" title="Class representing the assigned state of a task." alt="" coords="145,5,259,31"/>
+<area shape="poly" id="edge12_Node000000_Node000001" title=" " alt="" coords="59,140,90,90,112,63,137,40,156,29,159,33,140,44,116,67,95,93,64,143"/>
+<area shape="rect" id="Node000002" href="$classAvailableState.html" title="Class representing the available state of a task." alt="" coords="144,55,260,80"/>
+<area shape="poly" id="edge13_Node000000_Node000002" title=" " alt="" coords="70,142,101,115,137,89,161,78,163,83,140,94,104,119,74,146"/>
+<area shape="rect" id="Node000003" href="$classCancelledState.html" title="Class representing the cancelled state of a task." alt="" coords="142,104,262,129"/>
+<area shape="poly" id="edge14_Node000000_Node000003" title=" " alt="" coords="101,146,160,127,162,132,102,152"/>
+<area shape="rect" id="Node000004" href="$classCompletedState.html" title="Class representing the completed state of a task." alt="" coords="139,153,265,179"/>
+<area shape="poly" id="edge15_Node000000_Node000004" title=" " alt="" coords="104,163,138,163,138,169,104,169"/>
+<area shape="rect" id="Node000005" href="$classEscalatedState.html" title="Class representing the escalated state of a task." alt="" coords="143,203,261,228"/>
+<area shape="poly" id="edge16_Node000000_Node000005" title=" " alt="" coords="102,180,162,200,160,205,101,186"/>
+<area shape="rect" id="Node000006" href="$classInProgressState.html" title="Class representing the in&#45;progress state of a task." alt="" coords="140,252,264,277"/>
+<area shape="poly" id="edge17_Node000000_Node000006" title=" " alt="" coords="74,186,105,212,140,237,166,250,163,254,137,242,101,216,71,190"/>
+<area shape="rect" id="Node000007" href="$classRejectedState.html" title="Class representing the rejected state of a task." alt="" coords="145,301,259,327"/>
+<area shape="poly" id="edge18_Node000000_Node000007" title=" " alt="" coords="64,189,95,238,116,264,140,287,162,299,159,304,137,291,112,268,91,241,60,192"/>
+</map>

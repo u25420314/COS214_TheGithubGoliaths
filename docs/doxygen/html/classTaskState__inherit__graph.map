@@ -1,0 +1,17 @@
+<map id="TaskState" name="TaskState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="407,5,521,291"/>
+<area shape="rect" id="Node000002" href="$classAssignedState.html" title="Class representing the assigned state of a task." alt="" coords="5,359,112,484"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="395,181,335,210,265,246,193,291,126,341,106,360,102,357,122,337,190,286,262,242,332,205,393,176"/>
+<area shape="rect" id="Node000003" href="$classAvailableState.html" title="Class representing the available state of a task." alt="" coords="137,359,245,484"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="399,208,330,271,259,341,242,360,238,357,255,337,326,267,395,205"/>
+<area shape="rect" id="Node000004" href="$classCancelledState.html" title="Class representing the cancelled state of a task." alt="" coords="269,369,381,474"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="403,273,354,370,349,367,399,271"/>
+<area shape="rect" id="Node000005" href="$classCompletedState.html" title="Class representing the completed state of a task." alt="" coords="405,359,523,484"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="467,304,467,359,461,359,461,304"/>
+<area shape="rect" id="Node000006" href="$classEscalatedState.html" title="Class representing the escalated state of a task." alt="" coords="547,369,658,474"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="529,271,579,367,574,370,525,273"/>
+<area shape="rect" id="Node000007" href="$classInProgressState.html" title="Class representing the in&#45;progress state of a task." alt="" coords="682,339,798,504"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="533,205,602,267,673,337,684,349,680,353,669,341,598,271,529,209"/>
+<area shape="rect" id="Node000008" href="$classRejectedState.html" title="Class representing the rejected state of a task." alt="" coords="822,369,927,474"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="535,175,597,203,669,240,743,285,812,337,841,367,837,370,809,341,740,290,666,245,595,208,532,180"/>
+</map>

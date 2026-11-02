@@ -1,0 +1,26 @@
+<map id="RejectedState.cpp" name="RejectedState.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="207,5,347,31"/>
+<area shape="rect" id="Node000002" href="$RejectedState_8h.html" title=" " alt="" coords="5,79,131,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,33,116,77,114,72,243,28"/>
+<area shape="rect" id="Node000006" href="$AssignedState_8h.html" title=" " alt="" coords="155,79,282,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="270,33,239,70,235,67,266,29"/>
+<area shape="rect" id="Node000007" href="$Task_8h.html" title=" " alt="" coords="306,79,369,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="289,29,321,66,317,70,285,33"/>
+<area shape="rect" id="Node000010" href="$Participant_8h.html" title=" " alt="" coords="413,152,515,177"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="303,29,341,49,382,77,418,109,448,140,444,144,414,113,378,81,338,54,300,33"/>
+<area shape="rect" id="Node000003" href="$TaskState_8h.html" title="Abstract state in the state pattern for a Task&#39;s lifecycle, plus the exception." alt="" coords="114,152,211,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,102,138,141,135,146,82,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="119,225,206,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="165,178,165,212,160,212,160,178"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="269,225,328,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="186,175,266,217,263,221,183,180"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="212,106,182,143,178,140,207,103"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="320,106,296,126,277,153,274,168,275,183,286,212,281,214,270,184,268,167,272,151,292,122,317,102"/>
+<area shape="rect" id="Node000008" href="$WorkNode_8h.html" title="Defines the WorkNode abstract base class for the Composite pattern." alt="" coords="287,152,388,177"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="340,104,340,138,335,138,335,104"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="333,179,314,215,309,212,329,176"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="393,225,455,251"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="353,175,401,214,398,219,350,179"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="438,180,339,222,337,217,436,175"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="460,179,440,215,435,212,455,176"/>
+</map>

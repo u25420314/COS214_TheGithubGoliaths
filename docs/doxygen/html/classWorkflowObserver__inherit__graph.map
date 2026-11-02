@@ -1,0 +1,9 @@
+<map id="WorkflowObserver" name="WorkflowObserver">
+<area shape="rect" id="Node000001" title="Abstract &lt;&lt;Interface&gt;&gt; for anything that wants to be notified about workflow events." alt="" coords="131,5,300,91"/>
+<area shape="rect" id="Node000002" href="$classAuditLogger.html" title="AuditLogger: concrete instance of WorkflowObserver, stores a timestamped line for each event,..." alt="" coords="5,149,111,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,102,106,150,103,146,157,98"/>
+<area shape="rect" id="Node000003" href="$classNotificationService.html" title="Observer that prints notifications for important events relevant to the User." alt="" coords="135,149,296,234"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,104,218,148,213,148,213,104"/>
+<area shape="rect" id="Node000004" href="$classProgressMonitor.html" title="Observer that tracks how many tasks have been completed." alt="" coords="320,139,489,244"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="284,97,337,136,334,141,281,101"/>
+</map>

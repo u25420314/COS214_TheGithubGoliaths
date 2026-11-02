@@ -1,0 +1,24 @@
+<map id="StandardWorkflowBuilder" name="StandardWorkflowBuilder">
+<area shape="rect" id="Node000001" title="Class representing a standard workflow builder for constructing workflow definitions." alt="" coords="542,949,755,1255"/>
+<area shape="rect" id="Node000002" href="$classWorkflowBuilder.html" title="Class for WorkflowBuilder." alt="" coords="285,601,447,827"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="431,837,462,885,501,938,544,988,540,991,497,941,457,888,427,840"/>
+<area shape="rect" id="Node000003" href="$classStage.html" title="Class representing a stage in a workflow, which can contain multiple child work nodes." alt="" coords="782,541,937,887"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="784,858,742,936,737,933,779,856"/>
+<area shape="rect" id="Node000004" href="$classWorkNode.html" title="abstract Component class in Composite" alt="" coords="795,153,923,479"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="797,464,785,480,763,500,741,511,722,522,704,542,696,588,685,684,664,933,659,933,680,684,691,587,700,540,718,518,739,506,760,496,781,477,793,461"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="862,492,862,541,857,541,857,492"/>
+<area shape="rect" id="Node000006" href="$classTask.html" title="The class of the task used in the composite." alt="" coords="471,561,594,867"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="787,479,785,481,770,490,756,494,730,494,704,494,691,497,677,505,633,544,596,591,592,588,629,540,674,500,689,492,704,489,730,489,756,489,768,485,782,476,784,475"/>
+<area shape="rect" id="Node000005" href="$classWorkflowMediator.html" title=" " alt="" coords="775,5,943,91"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="862,91,862,137,857,137,857,91"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="581,866,601,932,596,934,576,868"/>
+<area shape="rect" id="Node000007" href="$classTaskState.html" title=" " alt="" coords="5,173,119,459"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="113,457,132,477,154,492,174,502,212,509,255,510,308,515,352,518,388,516,423,519,441,526,461,539,470,547,466,551,458,543,439,531,422,524,388,521,352,523,307,520,255,515,212,514,172,507,151,497,128,481,109,461"/>
+<area shape="rect" id="Node000008" href="$classParticipant.html" title=" " alt="" coords="143,183,312,449"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="301,447,327,477,354,499,386,515,407,521,425,523,442,527,461,539,468,546,465,550,458,543,440,532,424,529,405,527,384,520,351,504,323,481,297,451"/>
+<area shape="rect" id="Node000009" href="$classAssignmentStrategy.html" title="Abstract base class for assignment strategies." alt="" coords="337,273,518,359"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="435,358,446,433,465,517,473,545,467,546,459,518,441,434,430,359"/>
+<area shape="rect" id="Node000010" href="$classApprovalHandler.html" title="Abstract hander in the chain of respsonsibility design pattern." alt="" coords="543,253,701,379"/>
+<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="587,380,558,438,537,503,530,545,525,544,531,502,553,436,582,378"/>
+<area shape="poly" id="edge12_Node000010_Node000010" title=" " alt="" coords="703,280,721,292,728,316,725,332,718,343,714,340,720,330,723,316,717,296,700,284"/>
+</map>

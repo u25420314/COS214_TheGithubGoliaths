@@ -1,0 +1,17 @@
+<map id="ApprovalHandler.h" name="ApprovalHandler.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="238,5,381,31"/>
+<area shape="rect" id="Node000002" href="$ApprovalHandler_8cpp.html" title=" " alt="" coords="5,79,163,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,37,121,81,120,76,259,32"/>
+<area shape="rect" id="Node000003" href="$RoleApprover_8h.html" title=" " alt="" coords="187,79,309,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="292,43,260,80,256,77,288,40"/>
+<area shape="rect" id="Node000006" href="$Task_8cpp.html" title=" " alt="" coords="333,79,411,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="331,39,364,77,360,80,327,43"/>
+<area shape="rect" id="Node000007" href="$TimeoutEscalationHandler_8h.html" title=" " alt="" coords="436,79,641,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="360,32,502,76,501,81,359,37"/>
+<area shape="rect" id="Node000004" href="$RoleApprover_8cpp.html" title=" " alt="" coords="87,152,223,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="224,114,172,154,168,150,221,110"/>
+<area shape="rect" id="Node000005" href="$Scenario_8cpp.html" title=" " alt="" coords="247,152,353,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="267,114,294,150,289,153,262,117"/>
+<area shape="rect" id="Node000008" href="$TimeoutEscalationHandler_8cpp.html" title=" " alt="" coords="429,152,649,177"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="541,118,541,152,536,152,536,118"/>
+</map>

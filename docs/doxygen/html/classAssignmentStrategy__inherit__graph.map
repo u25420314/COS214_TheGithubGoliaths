@@ -1,0 +1,9 @@
+<map id="AssignmentStrategy" name="AssignmentStrategy">
+<area shape="rect" id="Node000001" title="Abstract base class for assignment strategies." alt="" coords="192,5,373,91"/>
+<area shape="rect" id="Node000002" href="$classLeastLoadedAssignment.html" title="Assigns tasks to the least busy eligible participant." alt="" coords="5,159,179,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,101,137,160,133,156,214,97"/>
+<area shape="rect" id="Node000003" href="$classRoleBasedAssignment.html" title=" " alt="" coords="203,159,363,224"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="285,104,285,158,280,158,280,104"/>
+<area shape="rect" id="Node000004" href="$classRuleBasedAssignment.html" title="Selects participants according to the rules asked." alt="" coords="387,139,573,244"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,97,409,136,406,141,350,101"/>
+</map>

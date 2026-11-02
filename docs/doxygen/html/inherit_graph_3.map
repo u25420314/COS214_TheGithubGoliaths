@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classCommand.html" title="Base case for every action in the workflow system." alt="" coords="5,104,95,129"/>
+<area shape="rect" id="Node000001" href="$classAssignTaskCommand.html" title="Assigns a task to a participant." alt="" coords="153,5,314,31"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="72,92,103,65,141,40,170,28,172,33,144,44,106,69,75,96"/>
+<area shape="rect" id="Node000002" href="$classCompleteTaskCommand.html" title="Completes a task." alt="" coords="143,55,324,80"/>
+<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="107,98,142,89,184,78,185,83,143,94,109,103"/>
+<area shape="rect" id="Node000003" href="$classRejectTaskCommand.html" title="Completes a task." alt="" coords="154,104,313,129"/>
+<area shape="poly" id="edge8_Node000000_Node000003" title=" " alt="" coords="108,114,154,114,154,119,108,119"/>
+<area shape="rect" id="Node000004" href="$classStartTaskCommand.html" title="Completes a task." alt="" coords="159,153,308,179"/>
+<area shape="poly" id="edge9_Node000000_Node000004" title=" " alt="" coords="109,130,186,151,185,156,107,135"/>
+<area shape="rect" id="Node000005" href="$classStartWorkflowCommand.html" title="The command class that starts a new instance of a workflow definition." alt="" coords="143,203,323,228"/>
+<area shape="poly" id="edge10_Node000000_Node000005" title=" " alt="" coords="75,137,106,163,144,188,175,200,173,205,141,192,103,168,72,141"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="TividySystem" name="TividySystem">
+<area shape="rect" id="Node000001" title="This brings everyone together into one class so its easy to use the workflow." alt="" coords="199,548,351,793"/>
+<area shape="rect" id="Node000002" href="$classWorkflowEngine.html" title="Mediator and Subject of workflow system." alt="" coords="16,140,181,485"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,480,210,532,205,534,179,482"/>
+<area shape="rect" id="Node000003" href="$classWorkflowMediator.html" title=" " alt="" coords="5,5,173,91"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,104,95,140,90,140,89,105"/>
+<area shape="rect" id="Node000004" href="$classAuditLogger.html" title="AuditLogger: concrete instance of WorkflowObserver, stores a timestamped line for each event,..." alt="" coords="222,270,327,355"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="277,355,277,532,272,532,272,355"/>
+<area shape="rect" id="Node000005" href="$classWorkflowObserver.html" title="Abstract &lt;&lt;Interface&gt;&gt; for anything that wants to be notified about workflow events." alt="" coords="198,5,367,91"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="284,105,279,270,273,269,278,105"/>
+<area shape="rect" id="Node000006" href="$classCommandHistory.html" title="Runs commands and keeps them to be undone." alt="" coords="351,250,515,375"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="421,377,399,449,369,525,361,542,356,539,364,523,394,447,416,375"/>
+</map>

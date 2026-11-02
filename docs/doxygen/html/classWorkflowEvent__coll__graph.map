@@ -1,0 +1,3 @@
+<map id="WorkflowEvent" name="WorkflowEvent">
+<area shape="rect" id="Node000001" title="An event in a workflow, published by engine to observers." alt="" coords="5,5,141,211"/>
+</map>

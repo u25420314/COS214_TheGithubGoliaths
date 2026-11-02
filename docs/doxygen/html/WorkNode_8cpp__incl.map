@@ -1,0 +1,12 @@
+<map id="WorkNode.cpp" name="WorkNode.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="97,5,213,31"/>
+<area shape="rect" id="Node000002" href="$WorkNode_8h.html" title="Defines the WorkNode abstract base class for the Composite pattern." alt="" coords="181,79,282,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,29,211,67,207,71,166,33"/>
+<area shape="rect" id="Node000005" href="$WorkflowMediator_8h.html" title=" " alt="" coords="5,79,156,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="145,33,105,71,101,67,142,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="85,152,143,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,106,146,147,144,142,211,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="200,152,263,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="234,104,234,138,229,138,229,104"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="89,103,105,139,100,141,84,105"/>
+</map>

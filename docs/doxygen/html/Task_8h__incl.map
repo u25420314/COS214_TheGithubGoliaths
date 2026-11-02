@@ -1,0 +1,10 @@
+<map id="Task.h" name="Task.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="46,5,109,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,152,64,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,31,61,79,44,139,39,138,56,78,71,30"/>
+<area shape="rect" id="Node000003" href="$WorkNode_8h.html" title="Defines the WorkNode abstract base class for the Composite pattern." alt="" coords="71,79,172,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,30,109,66,105,68,82,32"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="109,106,61,145,58,141,106,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="90,152,153,177"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="124,104,124,138,119,138,119,104"/>
+</map>

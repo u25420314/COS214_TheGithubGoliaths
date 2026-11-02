@@ -1,0 +1,5 @@
+<map id="TimeoutEscalationHandler" name="TimeoutEscalationHandler">
+<area shape="rect" id="Node000001" title="Escalates approval requests that exceed a waiting time limit." alt="" coords="5,179,216,264"/>
+<area shape="rect" id="Node000002" href="$classApprovalHandler.html" title="Abstract hander in the chain of respsonsibility design pattern." alt="" coords="31,5,190,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,145,113,178,108,178,108,145"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Command" name="Command">
+<area shape="rect" id="Node000001" title="Base case for every action in the workflow system." alt="" coords="31,548,148,673"/>
+<area shape="rect" id="Node000002" href="$classWorkflowEngine.html" title="Mediator and Subject of workflow system." alt="" coords="7,140,172,485"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,485,92,531,87,531,87,485"/>
+<area shape="rect" id="Node000003" href="$classWorkflowMediator.html" title=" " alt="" coords="5,5,173,91"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,104,92,140,87,140,87,104"/>
+</map>
