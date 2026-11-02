@@ -18,7 +18,7 @@ class Command {
         /// @brief Creates the command to work with the given engine
         /// @param e The engine the command must work with
         Command(WorkflowEngine* e) : engine(e) {}
-
+        virtual ~Command() = default;
         /// @brief Performs the action with invalid actions being refused
         virtual void execute() = 0;
 
@@ -26,7 +26,7 @@ class Command {
         virtual void undo() = 0;
 
         /// @brief ConcreteCommands are deleted through the virtual destructor
-        virtual ~Command();
+        
 };
 
 #endif

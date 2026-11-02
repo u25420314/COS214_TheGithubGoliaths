@@ -8,7 +8,7 @@ void TaskState::start(Task*){
     refuse("start");
 }
 
-void TaskState::assign(Task* t, Participant* p){
+void TaskState::assign(Task*, Participant*){
     refuse("assign");
 }
 

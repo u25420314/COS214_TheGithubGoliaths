@@ -19,7 +19,7 @@ using namespace std;
  */
 class AssignTaskCommand : public Command {
     private:
-        Task* task; ///< The task to be assigned
+        ::Task* task; ///< The task to be assigned
         Participant* participant; ///< The participant to recieve the task
         TaskMemento* backup; ///< The backup in case of failure or undo
 
@@ -28,7 +28,7 @@ class AssignTaskCommand : public Command {
         /// @param e The engine to be used
         /// @param t The task that is being assigned
         /// @param p The participant who is recieving the task
-        AssignTaskCommand(WorkflowEngine* e, Task* t, Participant* p);
+        AssignTaskCommand(WorkflowEngine* e, ::Task* t, Participant* p);
 
         /// @brief Saves a memento and assigns the task to the participant
         void execute() override;

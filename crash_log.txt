@@ -1,0 +1,20 @@
+--- START INSURANCE DEMO ---
+Attempting start n7
+Attempting reject n7
+SKIPPING undoLast() - Backend Memento segfault detected!
+Attempting complete n7
+--- END INSURANCE DEMO ---
+--- START UNIVERSITY DEMO ---
+--- END UNIVERSITY DEMO ---
+--- START INSURANCE DEMO ---
+--- END INSURANCE DEMO ---
+--- START INSURANCE DEMO ---
+--- END INSURANCE DEMO ---
+--- START UNIVERSITY DEMO ---
+--- END UNIVERSITY DEMO ---
+--- START UNIVERSITY DEMO ---
+--- END UNIVERSITY DEMO ---
+--- START INSURANCE DEMO ---
+--- END INSURANCE DEMO ---
+--- START INSURANCE DEMO ---
+--- END INSURANCE DEMO ---

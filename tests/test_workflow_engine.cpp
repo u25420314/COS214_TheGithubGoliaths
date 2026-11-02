@@ -1,5 +1,6 @@
 // Needs Person 3/4/5's classes, so it only builds once their code is merged.
 #include "doctest.h"
+#include <algorithm>
 #include "Participant.h"
 #include "StandardWorkflowBuilder.h"
 #include "Task.h"
@@ -8,6 +9,8 @@
 #include "WorkflowData.h"
 #include "WorkflowEngine.h"
 #include "WorkflowInstance.h"
+
+#include <algorithm>
 
 namespace {
 struct Recorder : WorkflowObserver {
@@ -39,7 +42,7 @@ TEST_CASE("The next task activates only when its dependencies are complete") {
     WorkflowInstance* inst = engine.createInstance(def, WorkflowData());
     Task* a = nthTask(inst, 0); Task* bTask = nthTask(inst, 1);
     REQUIRE(a); REQUIRE(bTask);
-    CHECK(rec.count("task_assigned") == 1);   // only A so far
+    CHECK(rec.count("task_assigned") == 1);  
 
     a->start(); a->complete();                // Task reports "completed" to the engine
     CHECK(rec.count("task_assigned") == 2);   // now B

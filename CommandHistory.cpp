@@ -23,11 +23,14 @@ void CommandHistory::executeCommand(Command* c) {
 
 void CommandHistory::undo() {
     if(done.empty()) return;
-
     Command* last = done.back();
     done.pop_back();
-    last->undo();
-
+    try {
+        last->undo();
+    } catch (...) {
+        delete last;
+        throw;
+    }
     delete last;
 }
 
