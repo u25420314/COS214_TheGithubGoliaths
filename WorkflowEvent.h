@@ -12,7 +12,6 @@
  *
  * @see WorkflowInstance
  * @see AuditLogger
- * @see WorkflowSubject: notifyObservers()
  * @see WorkflowObserver
  * @see WorkflowEngine
  * 
