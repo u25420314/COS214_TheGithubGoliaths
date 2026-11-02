@@ -24,71 +24,71 @@ class WorkflowInstance {
 public:
 
     /**
-     * @brief Creates an instance that owns the given tree, with status "Running".
-     * @param id   Unique id of this instance.
-     * @param root Root of the instance's cloned tree. Ownership is transferred to
-     *             the instance, so the caller must not delete it.
+     * @brief Creates instance that owns the given tree, with status "Running"
+     * @param id   Unique id for this instance
+     * @param root Root of instance's cloned tree, ownership transferred to
+     *             instance, therefore caller must not delete it
      */
     WorkflowInstance(const std::string& id, WorkNode* root);
 
     /**
-     * @brief Destroys the instance and deletes its tree.
+     * @brief Destroys instance and deletes its tree
      */
     ~WorkflowInstance();
 
-    /** @brief Copying is disabled, because the instance uniquely owns its tree. */
+    /** @brief Copying is disabled, because instance uniquely owns its tree */
     WorkflowInstance(const WorkflowInstance&) = delete;
 
-    /** @brief Copy assignment is disabled, because the instance uniquely owns its tree. */
+    /** @brief Copy assignment is disabled, because instance uniquely owns its tree */
     WorkflowInstance& operator=(const WorkflowInstance&) = delete;
 
     /**
-     * @brief Gets the instance's unique id.
-     * @return The id given at construction.
+     * @brief Gets instance's unique id
+     * @return id given at construction
      */
     const std::string& getId() const;
 
     /**
-     * @brief Gets the instance's current status (for example "Running").
-     * @return The current status string.
+     * @brief Gets instance's current status
+     * @return Current status string
      */
     const std::string& getStatus() const;
 
     /**
-     * @brief Changes the instance's status.
-     * @param s The new status.
+     * @brief Changes instance's status
+     * @param s New status
      */
     void setStatus(const std::string& s);
 
     /**
-     * @brief Gets the root of the instance's tree.
-     * @return Pointer to the root node. It is owned by the instance and must not be deleted by the caller.
+     * @brief Gets root of instance's tree
+     * @return Pointer to root node, owned by the instance and mustn't be deleted by caller
      */
     WorkNode* getRoot() const;
 
     /**
-     * @brief Gets the data this instance was started with, for reading and modifying.
-     * @return Reference to the instance's WorkflowData.
+     * @brief Gets data the instance was started with, for reading and modifying
+     * @return Reference to instance's WorkflowData
      */
     WorkflowData& getData();
 
     /**
-     * @brief Gets the data this instance was started with, read-only.
-     * @return Const reference to the instance's WorkflowData.
+     * @brief Gets data this instance was started with, read-only
+     * @return Const reference to instance's WorkflowData
      */
     const WorkflowData& getData() const;
 
     /**
-     * @brief Checks whether the whole workflow has finished.
-     * @return true if the tree exists and its root reports it is complete, otherwise false.
+     * @brief Checks whether whole workflow has finished
+     * @return true if tree exists and root reports it is complete, otherwise false
      */
     bool isComplete() const;
 
 private:
-    std::string id;       ///< Unique id of this instance.
-    std::string status;   ///< Current status; starts as "Running".
-    WorkflowData data;    ///< Data supplied when the instance was started.
-    WorkNode* root;       ///< Root of the owned, cloned tree.
+    std::string id;       ///< Unique id of instance
+    std::string status;   ///< Current status, starts as "Running"
+    WorkflowData data;    ///< Data supplied when instance was started
+    WorkNode* root;       ///< Root of owned cloned tree
 };
 
 #endif
