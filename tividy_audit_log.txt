@@ -1,0 +1,529 @@
+[2026-11-01 22:34:37] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-01 22:34:37] [GUI ACTION] Started Instance INST-1
+[2026-11-01 22:34:37] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-01 22:34:37] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-01 22:34:37] [GUI ACTION] Started Instance INST-2
+[2026-11-01 22:34:37] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-01 22:35:28] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-01 22:35:28] [GUI ACTION] Started Instance INST-3
+[2026-11-01 22:35:28] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-01 22:36:34] [GUI ACTION] Registered Participant: Abachio Fiore (Role: Stabbing Assistant)
+[2026-11-01 22:36:53] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-4)
+[2026-11-01 22:36:53] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-5)
+[2026-11-01 23:03:48] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-01 23:03:48] [GUI ACTION] Started Instance INST-1
+[2026-11-01 23:03:48] [GUI ACTION] Executing n7 Reject/Undo Test
+[2026-11-01 23:03:48] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-01 23:03:49] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-01 23:03:49] [GUI ACTION] Started Instance INST-2
+[2026-11-01 23:03:49] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-01 23:09:30] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-01 23:09:30] [GUI ACTION] Started Instance INST-1
+[2026-11-01 23:09:30] [GUI ACTION] Executing n7 Reject/Undo Test
+[2026-11-01 23:09:30] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-01 23:10:42] [GUI ACTION] Registered Participant: Fernando Gonzalez (Role: Bull Fighter )
+[2026-11-01 23:10:55] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-2)
+[2026-11-01 23:12:54] [GUI ACTION] Started Task n2
+[2026-11-01 23:13:30] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-3)
+[2026-11-01 23:13:41] [GUI ACTION] Rejected Task n2
+[2026-11-01 23:14:18] [GUI ACTION] Registered Participant: Fernandez Gonzalo (Role: Full Bighter)
+[2026-11-01 23:14:18] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-01 23:14:18] [GUI ACTION] Started Instance INST-4
+[2026-11-01 23:14:18] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-01 23:14:26] [GUI ACTION] Assigned Task n2 to Fernandez Gonzalo
+[2026-11-02 00:13:57] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:13:57] [GUI ACTION] Started Instance INST-1
+[2026-11-02 00:13:57] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:14:45] [GUI ACTION] Registered Participant: Globa Porups (Role: Stomgap Worker)
+[2026-11-02 00:14:45] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-02 00:14:45] [GUI ACTION] Started Instance INST-2
+[2026-11-02 00:14:45] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-02 00:15:13] [GUI ACTION] Registered Participant: Soringa Backscratch (Role: Long Elk)
+[2026-11-02 00:15:24] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-3)
+[2026-11-02 00:17:33] [GUI ACTION] Undid Last Command
+[2026-11-02 00:17:33] [GUI ACTION] Undid Last Command
+[2026-11-02 00:17:33] [GUI ACTION] Undid Last Command
+[2026-11-02 00:17:34] [GUI ACTION] Undid Last Command
+[2026-11-02 00:23:04] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:23:04] [GUI ACTION] Started Instance INST-1
+[2026-11-02 00:23:04] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:23:09] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-02 00:23:09] [GUI ACTION] Started Instance INST-2
+[2026-11-02 00:23:09] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-02 00:23:30] [GUI ACTION] Registered Participant: Yugudugdugdug (Role: Thinker of Thinks)
+[2026-11-02 00:23:54] [GUI ACTION] Registered Participant: Croatian Spiel (Role: Magician's Crockpot)
+[2026-11-02 00:24:00] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-3)
+[2026-11-02 00:24:01] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-4)
+[2026-11-02 00:24:32] [GUI ACTION] Undid Last Command
+[2026-11-02 00:25:26] [GUI ACTION] Undid Last Command
+[2026-11-02 00:25:30] [GUI ACTION] Undid Last Command
+[2026-11-02 00:31:31] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:31:31] [GUI ACTION] Started Instance INST-1
+[2026-11-02 00:31:31] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:31:42] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-02 00:31:42] [GUI ACTION] Started Instance INST-2
+[2026-11-02 00:31:42] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT
+[2026-11-02 00:32:52] [GUI ACTION] Registered Participant: Big Babyson (Role: Baby)
+[2026-11-02 00:33:21] [GUI ACTION] Registered Participant: Alisson hardgraves (Role: Hard)
+[2026-11-02 00:33:28] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-3)
+[2026-11-02 00:40:24] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:40:24] [GUI ACTION] Started Instance INST-1
+[2026-11-02 00:40:24] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:40:28] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-02 00:40:28] [GUI ACTION] Started Instance INST-2
+[2026-11-02 00:40:28] [GUI ACTION] Loop 0 on n3
+[2026-11-02 00:40:28] [GUI ACTION]   startTask OK
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask OK
+[2026-11-02 00:40:28] [GUI ACTION] Loop 1 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 2 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 3 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 4 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 5 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 6 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 7 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 8 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 9 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 10 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 11 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 12 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 13 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 14 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 15 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 16 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 17 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 18 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 19 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 20 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 21 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 22 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 23 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 24 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 25 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 26 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 27 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 28 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 29 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 30 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 31 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 32 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 33 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 34 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 35 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 36 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 37 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 38 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 39 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 40 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 41 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 42 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 43 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 44 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 45 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 46 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 47 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 48 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] Loop 49 on n4
+[2026-11-02 00:40:28] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:40:28] [GUI ACTION] n7 never assigned. Pending: 
+[2026-11-02 00:40:28] [GUI ACTION]   pending: n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 0 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 1 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 2 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 3 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 4 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 5 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 6 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 7 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 8 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 9 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 10 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 11 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 12 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 13 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 14 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 15 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 16 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 17 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 18 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 19 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 20 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 21 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 22 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 23 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 24 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 25 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 26 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 27 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 28 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 29 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 30 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 31 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 32 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 33 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 34 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 35 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 36 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 37 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 38 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 39 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 40 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 41 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 42 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 43 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 44 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 45 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 46 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 47 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 48 on n4
+[2026-11-02 00:40:28] [GUI ACTION] Final loop 49 on n4
+[2026-11-02 00:40:28] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT (finished flag=0)
+[2026-11-02 00:41:25] [GUI ACTION] Registered Participant: IJJJJJJ Clurk (Role: Rtoreical)
+[2026-11-02 00:41:52] [GUI ACTION] Registered Participant: hlybrtjk; (Role: Umil;io.,io)
+[2026-11-02 00:42:01] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-3)
+[2026-11-02 00:43:00] [GUI ACTION] Started Task n8
+[2026-11-02 00:43:08] [GUI ACTION] Assigned Task n8 to IJJJJJJ Clurk
+[2026-11-02 00:43:27] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-4)
+[2026-11-02 00:44:06] [GUI ACTION] Undid Last Command
+[2026-11-02 00:44:06] [GUI ACTION] Undid Last Command
+[2026-11-02 00:44:07] [GUI ACTION] Undid Last Command
+[2026-11-02 00:44:12] [GUI ACTION] Undid Last Command
+[2026-11-02 00:49:41] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:49:41] [GUI ACTION] Started Instance INST-1
+[2026-11-02 00:49:41] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:49:41] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:49:41] [GUI ACTION] Started Instance INST-2
+[2026-11-02 00:49:41] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:49:43] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-02 00:49:43] [GUI ACTION] Started Instance INST-3
+[2026-11-02 00:49:43] [GUI ACTION] Loop 0 on n3
+[2026-11-02 00:49:43] [GUI ACTION]   startTask OK
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask OK
+[2026-11-02 00:49:43] [GUI ACTION] Loop 1 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 2 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 3 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 4 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 5 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 6 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 7 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 8 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 9 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 10 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 11 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 12 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 13 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 14 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 15 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 16 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 17 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 18 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 19 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 20 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 21 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 22 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 23 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 24 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 25 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 26 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 27 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 28 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 29 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 30 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 31 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 32 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 33 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 34 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 35 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 36 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 37 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 38 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 39 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 40 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 41 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 42 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 43 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 44 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 45 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 46 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 47 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 48 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] Loop 49 on n4
+[2026-11-02 00:49:43] [GUI ACTION]   startTask THREW: start is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION]   completeTask THREW: complete is not allowed in Completed state
+[2026-11-02 00:49:43] [GUI ACTION] n7 never assigned. Pending: 
+[2026-11-02 00:49:43] [GUI ACTION]   pending: n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 0 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 1 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 2 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 3 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 4 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 5 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 6 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 7 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 8 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 9 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 10 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 11 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 12 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 13 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 14 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 15 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 16 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 17 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 18 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 19 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 20 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 21 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 22 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 23 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 24 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 25 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 26 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 27 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 28 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 29 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 30 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 31 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 32 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 33 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 34 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 35 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 36 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 37 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 38 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 39 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 40 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 41 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 42 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 43 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 44 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 45 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 46 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 47 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 48 on n4
+[2026-11-02 00:49:43] [GUI ACTION] Final loop 49 on n4
+[2026-11-02 00:49:43] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT (finished flag=0)
+[2026-11-02 00:52:25] [GUI ACTION] Registered Participant: POKSDPAs (Role: POAKSDPAdks)
+[2026-11-02 00:52:35] [GUI ACTION] Registered Participant: {PASKLD{APdks (Role: POIKPOKPOK)
+[2026-11-02 00:52:44] [GUI ACTION] Started Workflow: Goliath Insurance Claim (ID: INST-4)
+[2026-11-02 00:53:11] [GUI ACTION] Completed Task n5
+
+[2026-11-02 00:53:13] [GUI ACTION] Started Task n5
+
+[2026-11-02 00:53:14] [GUI ACTION] Rejected Task n5
+
+[2026-11-02 00:53:17] [GUI ACTION] Completed Task n5
+
+[2026-11-02 00:53:20] [GUI ACTION] Assigned Task n5
+ to POKSDPAs
+[2026-11-02 00:53:24] [GUI ACTION] Undid Last Command
+[2026-11-02 00:53:31] [GUI ACTION] Undid Last Command
+[2026-11-02 00:54:44] [GUI ACTION] STARTED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:54:44] [GUI ACTION] Started Instance INST-1
+[2026-11-02 00:54:44] [GUI ACTION] FINISHED UNIVERSITY DEMO SCRIPT
+[2026-11-02 00:54:56] [GUI ACTION] STARTED INSURANCE DEMO SCRIPT
+[2026-11-02 00:54:56] [GUI ACTION] Started Instance INST-2
+[2026-11-02 00:54:56] [GUI ACTION] Loop 0 on n3
+[2026-11-02 00:54:56] [GUI ACTION] Loop 1 on n4
+[2026-11-02 00:54:56] [GUI ACTION] n7 never assigned. Pending: 
+[2026-11-02 00:54:56] [GUI ACTION] FINISHED INSURANCE DEMO SCRIPT (finished flag=0)
+[2026-11-02 00:55:18] [GUI ACTION] Registered Participant: Humbus Legorio (Role: Instrument)
+[2026-11-02 00:55:40] [GUI ACTION] Registered Participant: Slombi Dinganinana (Role: Umbureian)
+[2026-11-02 00:55:46] [GUI ACTION] Started Workflow: Goliath Insurance Claim (ID: INST-3)
+[2026-11-02 00:55:49] [GUI ACTION] Started Workflow: Goliath University Admission (ID: INST-4)
+[2026-11-02 00:56:31] [GUI ACTION] Assigned Task n8 to Humbus Legorio
+[2026-11-02 00:56:33] [GUI ACTION] Started & Completed Task n8
+[2026-11-02 00:56:39] [GUI ACTION] Undid Last Command
+[2026-11-02 00:56:44] [GUI ACTION] Completed Task n8

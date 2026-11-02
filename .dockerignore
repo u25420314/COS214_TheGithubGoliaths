@@ -1,0 +1,10 @@
+build/
+.git
+.vscode/
+*.zip
+deco_tests
+state_tests
+*deco_tests
+*.exe
+*_log.txt
+build_errors.txt
