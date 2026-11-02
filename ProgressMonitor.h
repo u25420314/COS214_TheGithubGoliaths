@@ -38,6 +38,9 @@ public:
      */
     int getCompletedCount() const { return completedCount; }
 
+    /// @brief gets the count of completed tasks
+    /// @return the number of completed tasks
+    int getCompletedCount() const { return completedCount; }
 private:
     /**
      * @brief Number of tasks currently counted as completed
