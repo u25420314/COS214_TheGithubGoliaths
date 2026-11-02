@@ -1,6 +1,12 @@
 #ifndef TASKSTATE_H
 #define TASKSTATE_H
 
+/**
+ * @file TaskState.h
+ * @brief Abstract state in the state pattern for a Task's lifecycle, plus the exception
+ * 
+ * 
+ */
 #include <stdexcept>
 #include <string>
 
@@ -9,35 +15,30 @@ class Task;
 /// @brief forward declaration of Participant
 class Participant;
 
-/// @brief class for and invalid transaction error
 class InvalidTransitionError : public std::logic_error{
     public:
-        /// @brief constructor for an invalid transaction error
-        /// @param msg is the message of why theres an error
         explicit InvalidTransitionError(const std::string& msg) : std::logic_error(msg) {}
 };
 
-/// @brief the class for the task state
+
 class TaskState {
     protected:
-        /// @brief refuses a task
-        /// @param action the action the task does
         void refuse(const std::string& action) const;
     public:
-        /// @brief the destructor of the TaskState
         virtual ~TaskState() {}
+
+
+        /**
+         * @brief Begins work on the task
+         * @param t The task whose state is changing
+         * @throws InvalidTransitionError if starting is not allowed here
+         */
+
 
         /// @brief starts the task State
         /// @param t the task to start
         virtual void start(Task* t);
-
-        /// @brief assigns a task with the participant
-        /// @param t the task to be assigned
-        /// @param p the participant to recieve the task
         virtual void assign(Task* t, Participant* p);
-
-        /// @brief complete a task
-        /// @param t the task to be completed
         virtual void complete(Task* t);
 
         /// @brief reject a task
