@@ -2,21 +2,45 @@
 #include <string>
 #include "WorkflowObserver.h"
 
-/// @brief class representing a progress monitor that observes workflow events
+/**
+ * @class ProgressMonitor
+ * @brief Observer that tracks how many tasks have been completed
+ * @author Simon Vogel
+ * 
+ * Attach to WorkflowEngine and listens to each WorkflowEvent
+ * "completed" event adds one to count, "undone" event removes one
+ *
+ * @see WorkflowObserver
+ * @see WorkflowEngine
+ * @see WorkflowEvent
+ */
 class ProgressMonitor : public WorkflowObserver {
 public:
-    /// @brief updates the progress monitor with a new workflow event
-    /// @param e the event to be monitored
+    /**
+     * @brief Receives event from engine, updates count
+     *
+     * "completed"-> increment count, "undone" -> decrement count,
+     * never below zero. All other event types ignored
+     *
+     * @param e The event that was published
+     */
     void update(const WorkflowEvent& e) override;
 
-    /// @brief reports the progress of completed tasks
-    /// @return the report string containing the number of completed tasks
+    /**
+     * @brief Builds formatted progress summary
+     * @return String, e.g. "2 task(s) completed"
+     */
     std::string report() const;
 
-    /// @brief gets the count of completed tasks
-    /// @return the number of completed tasks
+    /**
+     * @brief Gets the number of tasks currently counted as completed.
+     * @return The completed count (never negative)
+     */
     int getCompletedCount() const { return completedCount; }
+
 private:
-    /// @brief the count of completed tasks
-    int completedCount = 0;
+    /**
+     * @brief Number of tasks currently counted as completed
+     */
+    int completedCount = 0;   
 };

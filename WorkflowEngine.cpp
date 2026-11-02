@@ -1,5 +1,6 @@
 #include "WorkflowEngine.h"
 #include <algorithm>
+#include <vector>
 #include "AssignmentStrategy.h"
 #include "AvailableState.h"
 #include "Task.h"
@@ -26,7 +27,7 @@ namespace {
     }
 
     std::string stateName(Task* t) { return t->getState()->getName(); }
-}  // namespace
+} 
 
 WorkflowEngine::WorkflowEngine(std::vector<Participant> participants)
     : participants(std::move(participants)) {}
@@ -34,7 +35,7 @@ WorkflowEngine::WorkflowEngine(std::vector<Participant> participants)
 WorkflowEngine::~WorkflowEngine() = default;
 
 WorkflowInstance* WorkflowEngine::createInstance(const WorkflowDefinition& def, const WorkflowData& data) {
-    std::unique_ptr<WorkflowInstance> inst(def.instantiate("INST-" + std::to_string(instances.size() + 1)));  // deep clone (Prototype)
+    std::unique_ptr<WorkflowInstance> inst(def.instantiate("INST-" + std::to_string(instances.size() + 1)));
     inst->getData() = data;
     for (WorkNode* n : collectNodes(*inst)) n->setMediator(this);
 
@@ -49,10 +50,10 @@ void WorkflowEngine::notify(WorkNode* sender, const std::string& event) {
     WorkflowInstance* inst = findInstanceOf(sender);
     if (!inst) return;
 
-    publish(event, *inst, sender);           // tell the observers first
+    publish(event, *inst, sender);
 
     if (event == "completed" || event == "rejected") {
-        activateNext(*inst);                 // something finished, or rejected work was re-routed
+        activateNext(*inst); 
         if (event == "completed" && inst->isComplete())
             publish("instance_completed", *inst, nullptr);
     } else if (event == "undone") {
@@ -92,17 +93,18 @@ void WorkflowEngine::detach(WorkflowObserver* o) {
     observers.erase(std::remove(observers.begin(), observers.end(), o), observers.end());
 }
 
-void WorkflowEngine::attach(WorkflowObserver* o) {
-    if(o && std::find(observers.begin(), observers.end(), o) == observers.end()) observers.push_back(o);
+void WorkflowEngine::attach(WorkflowObserver* o){
+    auto it = std::find(observers.begin(), observers.end(), o);
+    if(it == observers.end()){
+        observers.emplace_back(o);
+    }
 }
 
 void WorkflowEngine::notifyObservers(const WorkflowEvent& e) {
-    std::vector<WorkflowObserver*> snapshot = observers;   // observers may detach while we loop
+    std::vector<WorkflowObserver*> snapshot = observers;
     for (WorkflowObserver* o : snapshot)
         if (std::find(observers.begin(), observers.end(), o) != observers.end()) o->update(e);
 }
-
-//Helpers: 
 
 WorkflowInstance* WorkflowEngine::findInstanceOf(WorkNode* node) {
     if (!node) return nullptr;
@@ -112,10 +114,8 @@ WorkflowInstance* WorkflowEngine::findInstanceOf(WorkNode* node) {
     return nullptr;
 }
 
-// Undo knock-on: a task that was assigned only because its predecessor was complete
-// must go back to Available if that predecessor is no longer complete.
 void WorkflowEngine::unlockDownstream(WorkflowInstance& instance) {
-    for (WorkNode* n : collectNodes(instance)) {
+    for (WorkNode* n : (std::vector<WorkNode*>&)instance) {
         Task* t = dynamic_cast<Task*>(n);
         if (t && stateName(t) == "Assigned" && !t->canStart()) {
             

@@ -3,18 +3,32 @@
 #include <vector>
 #include "WorkflowObserver.h"
 
-/// @brief class representing an audit logger that observes workflow events
+/** 
+ * @class AuditLogger 
+ * @author Simon Vogel
+ * @brief AuditLogger: concrete instance of WorkflowObserver, stores a timestamped line
+ * for each event, read by the GUI as the history of the WorkflowEvents
+ * 
+ * @see WorkflowObserver
+ */
+
 class AuditLogger : public WorkflowObserver {
 public:
-    /// @brief updates the audit logger with a new workflow event
-    /// @param e the event to be logged
+    /**
+     * @brief Overrides update to generate a vector of entries representing the timestamped WorkflowEvent history
+     * @param e the WorkflowEvent being added to the history 
+     */
     void update(const WorkflowEvent& e) override;
-
-    /// @brief gets the entries logged by the audit logger
-    /// @return returns the entries logged by the audit logger
+    
+    /**
+     * @brief Returns the entries of all the timestamped WorkflowEvents as formatted strings
+     * @return Vector of all entries, formatted
+     */
     const std::vector<std::string>& getEntries() const { return entries; }
 
 private:
-    /// @brief vector of entries logged by the audit logger
+    /**
+    * @brief vector storing the strings representing the timestamped history of the Workflowevents 
+    */
     std::vector<std::string> entries;
 };

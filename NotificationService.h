@@ -2,17 +2,31 @@
 #include <iostream>
 #include "WorkflowObserver.h"
 
-/// @brief class representing a notification service that observes workflow events
+
+/**
+ * @class NotificationService
+ * @author Simon Vogel
+ * @brief Observer that prints notifications for important events relevant
+ * to the User
+ */
 class NotificationService : public WorkflowObserver {
 public:
-    /// @brief constructor for the notification service
-    /// @param out the output stream where notifications will be sent
+    /**
+     * @brief constructor that uses an ostream operator for outputting Notifications
+     * @param ostream representing the output of the Notification 
+     */
+    
     explicit NotificationService(std::ostream& out = std::cout) : out(out) {}
-
-    /// @brief updates the notification service with a new workflow event
-    /// @param e the event to be notified about
+    
+    /**
+     * @brief overriden from Observer, creates the Notification but isn't outputted
+     * @param e The WorkflowEvent causing the notification to be necessary to push 
+     */
     void update(const WorkflowEvent& e) override;
+
 private:
-    /// @brief the output stream where notifications will be sent
+/**
+ * @brief ostream that outputs the notifications
+ */
     std::ostream& out;
 };

@@ -42,11 +42,15 @@ string TividySystem::startWorkflow(string defName, WorkflowData data) {
 
 // Creates assign command and gives to history
 void TividySystem::assignTask(string taskId, Participant* p) {
-    if(p == nullptr) return;
-
+    if(p == nullptr) {
+        cout << "null participant cant be assigned a task\n";
+        return;
+    }
     Task* task = engine.findTask(taskId);
-    if(task == nullptr) return;
-
+    if(task == nullptr) {
+        cout << "Task not found\n";
+        return;
+    }
     history.executeCommand(new AssignTaskCommand(&engine, task, p));
 }
 
@@ -74,6 +78,7 @@ vector<string> TividySystem::getHistory() const {
 
 void TividySystem::undoLast() {
     history.undo();
+    engine.notifyObservers(WorkflowEvent("undone", "system", "undo"));
 }
 
 TividySystem::~TividySystem() {
