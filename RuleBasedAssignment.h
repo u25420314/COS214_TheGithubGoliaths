@@ -16,7 +16,9 @@
 
 class RuleBasedAssignment : public AssignmentStrategy{
     private:
+        /// @brief the field to be checked in the participant's roles
         std::string field;
+        /// @brief the threshold value for the field to determine eligibility
         std::string threshold;
 
     public:

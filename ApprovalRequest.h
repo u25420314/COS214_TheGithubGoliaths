@@ -3,6 +3,7 @@
 
 #include <string>
 
+/// @brief Forward declaration of the Task class
 class Task;
 
 
@@ -20,8 +21,11 @@ class Task;
  */
 class ApprovalRequest{
     private:
+        /// @brief Pointer to the task associated with the approval request
         Task* task;
+        /// @brief Decision made on the approval request
         std::string decision;
+        /// @brief Number of days the request has been waiting for approval
         int daysWaiting;
 
     public:

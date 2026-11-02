@@ -1,6 +1,7 @@
 #ifndef APPROVALHANDLER_H
 #define APPROVALHANDLER_H
 
+/// @brief Forward declaration of the ApprovalRequest class
 class ApprovalRequest;
 
 /**

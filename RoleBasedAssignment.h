@@ -1,8 +1,6 @@
 #ifndef ROLEBASEDASSIGNMENT_H
 #define ROLEBASEDASSIGNMENT_H
 
-
-
 #include "AssignmentStrategy.h"
 /**
  * @class LeastLoadedAssignment

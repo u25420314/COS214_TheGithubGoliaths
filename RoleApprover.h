@@ -9,6 +9,7 @@
  */
 class RoleApprover : public ApprovalHandler{
     private:
+        /// @brief the role that this approver is responsible for
         std::string role;
 
     public:
