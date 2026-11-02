@@ -24,9 +24,6 @@ public:
      */
     void update(const WorkflowEvent& e) override;
 
-    /// @brief updates the notification service with a new workflow event
-    /// @param e the event to be notified about
-    void update(const WorkflowEvent& e) override;
 private:
 /**
  * @brief ostream that outputs the notifications
