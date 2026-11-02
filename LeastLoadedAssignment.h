@@ -2,14 +2,19 @@
 #define LEASTLOADEDASSIGNMENT_H
 
 #include "AssignmentStrategy.h"
-
-/// @brief Class representing the least loaded assignment strategy for assigning tasks to participants
+/**
+ * @class LeastLoadedAssignment
+ * @brief Assigns tasks to the least busy eligible participant.
+ */
 class LeastLoadedAssignment : public AssignmentStrategy{
     public:
-        /// @brief chooses a participant from the pool based on the least loaded assignment strategy
-        /// @param task the task that needs to be assigned
-        /// @param pool the pool of participants to choose from
-        /// @return the chosen participant with the least workload
+        /**
+     * @brief Selects the participant with the lowest workload
+     *        who has the task's required role.
+     * @param task Task requiring assignment.
+     * @param pool Available participants.
+     * @return Least-loaded eligible participant, or nullptr if none.
+     */
         virtual Participant* choose(const Task& task, const std::vector<Participant*>& pool);
 };
 

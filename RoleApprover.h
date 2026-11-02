@@ -2,20 +2,27 @@
 #define ROLEAPPROVER_H
 #include "ApprovalHandler.h"
 #include <string>
-
-/// @brief Class representing a role-based approver in the approval chain
+/**
+ * @class RoleApprover
+ * @brief Approves requests based on participant roles.
+ * @details ConcreteHandler in the Chain of Responsibility pattern.
+ */
 class RoleApprover : public ApprovalHandler{
     private:
         /// @brief the role that this approver is responsible for
         std::string role;
 
     public:
-        /// @brief Constructor for RoleApprover
-        /// @param role the role that this approver is responsible for
+        /**
+     * @brief Constructs an approver with a required role.
+     * @param role Role needed for approval.
+     */
         RoleApprover(const std::string& role);
-
-        /// @brief handles the approval request based on the role of the approver
-        /// @param request the approval request to be handled
+        /**
+     * @brief Approves the request if the role matches,
+     *        otherwise forwards it to the next handler.
+     * @param request Approval request to process.
+     */
         virtual void handle(ApprovalRequest& request);
 };
 
